@@ -58,7 +58,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
-      - uses: aquasecurity/trivy-action@0.36.0
+      # Tags carry a leading "v". Versions below v0.35.0 are affected by the
+      # brief Trivy ecosystem supply chain compromise; do not pin back.
+      - uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: fs
           scan-ref: .
@@ -77,7 +79,9 @@ jobs:
         with:
           context: .
           push: false
-          load: true
           tags: mcp-fleaflicker:ci
+          # SBOM and provenance attestations produce a manifest list, which the
+          # local docker exporter cannot load. This job only needs to prove the
+          # image builds, so it does not set `load` and nothing is exported.
           sbom: true
           provenance: true
