@@ -1,0 +1,239 @@
+{
+ "divisions": [
+  {
+   "id": 591347,
+   "teams": [
+    {
+     "id": 1273763,
+     "name": "Team 08",
+     "recordOverall": {
+      "wins": 10,
+      "losses": 3,
+      "winPercentage": {
+       "value": 0.7692308,
+       "formatted": ".769"
+      },
+      "rank": 4,
+      "formatted": "10-3"
+     },
+     "pointsFor": {
+      "value": 1643.46,
+      "formatted": "1,643.46"
+     },
+     "pointsAgainst": {
+      "value": 1548.34,
+      "formatted": "1,548.34"
+     },
+     "streak": {
+      "value": -1.0,
+      "formatted": "L1"
+     },
+     "waiverPosition": 4,
+     "draftPosition": 11,
+     "owners": [
+      {
+       "id": 888466,
+       "displayName": "owner01"
+      }
+     ]
+    },
+    {
+     "id": 1741996,
+     "name": "Team 01",
+     "recordOverall": {
+      "wins": 10,
+      "losses": 3,
+      "winPercentage": {
+       "value": 0.7692308,
+       "formatted": ".769"
+      },
+      "rank": 1,
+      "formatted": "10-3"
+     },
+     "pointsFor": {
+      "value": 1615.9,
+      "formatted": "1,615.9"
+     },
+     "pointsAgainst": {
+      "value": 1307.5,
+      "formatted": "1,307.5"
+     },
+     "streak": {
+      "value": 6.0,
+      "formatted": "W6"
+     },
+     "waiverPosition": 1,
+     "draftPosition": 14,
+     "owners": [
+      {
+       "id": 2064468,
+       "displayName": "owner02"
+      }
+     ]
+    },
+    {
+     "id": 1260133,
+     "name": "Team 07",
+     "recordOverall": {
+      "wins": 9,
+      "losses": 4,
+      "winPercentage": {
+       "value": 0.6923077,
+       "formatted": ".692"
+      },
+      "rank": 5,
+      "formatted": "9-4"
+     },
+     "pointsFor": {
+      "value": 1669.3,
+      "formatted": "1,669.3"
+     },
+     "pointsAgainst": {
+      "value": 1478.42,
+      "formatted": "1,478.42"
+     },
+     "streak": {
+      "value": 1.0,
+      "formatted": "W1"
+     },
+     "waiverPosition": 5,
+     "draftPosition": 10,
+     "owners": [
+      {
+       "id": 485693,
+       "displayName": "owner03",
+       "avatarUrl": "https://s3.amazonaws.com/fleaflicker/u485693_200x200.jpg"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "season": 2025,
+ "league": {
+  "id": 14153,
+  "name": "Team 15",
+  "activeForCurrentSeason": true,
+  "membershipType": "CREATING_COMMISH",
+  "rosterRequirements": {
+   "positions": [
+    {
+     "label": "QB",
+     "group": "START",
+     "eligibility": [
+      "QB"
+     ],
+     "min": 1,
+     "max": 2,
+     "start": 1,
+     "colors": [
+      "DRAFT_BOARD_RED"
+     ]
+    },
+    {
+     "label": "RB",
+     "group": "START",
+     "eligibility": [
+      "RB"
+     ],
+     "min": 3,
+     "max": 5,
+     "start": 1,
+     "colors": [
+      "DRAFT_BOARD_GREEN"
+     ]
+    },
+    {
+     "label": "WR",
+     "group": "START",
+     "eligibility": [
+      "WR"
+     ],
+     "min": 4,
+     "max": 6,
+     "start": 2,
+     "colors": [
+      "DRAFT_BOARD_BLUE"
+     ]
+    },
+    {
+     "label": "TE",
+     "group": "START",
+     "eligibility": [
+      "TE"
+     ],
+     "min": 1,
+     "max": 3,
+     "start": 1,
+     "colors": [
+      "DRAFT_BOARD_YELLOW"
+     ]
+    },
+    {
+     "label": "RB/WR/TE",
+     "group": "START",
+     "eligibility": [
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "start": 1,
+     "colors": [
+      "DRAFT_BOARD_GREEN",
+      "DRAFT_BOARD_BLUE",
+      "DRAFT_BOARD_YELLOW"
+     ]
+    },
+    {
+     "label": "QB/RB/WR/TE",
+     "group": "START",
+     "eligibility": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "start": 1,
+     "colors": [
+      "DRAFT_BOARD_GREEN",
+      "DRAFT_BOARD_BLUE",
+      "DRAFT_BOARD_YELLOW",
+      "DRAFT_BOARD_RED"
+     ]
+    },
+    {
+     "label": "D/ST",
+     "group": "START",
+     "eligibility": [
+      "D/ST"
+     ],
+     "min": 1,
+     "max": 2,
+     "start": 1,
+     "colors": [
+      "DRAFT_BOARD_PURPLE"
+     ]
+    },
+    {
+     "label": "BN",
+     "max": 8
+    }
+   ],
+   "rosterSize": 16,
+   "starterCount": 8,
+   "benchCount": 8,
+   "eligibility": [
+    "QB",
+    "RB",
+    "WR",
+    "TE",
+    "D/ST"
+   ]
+  },
+  "size": 14,
+  "capacity": 14,
+  "description": "14-Team Redraft",
+  "chatChannel": "/chats/NFL/leagues/14153/all",
+  "draftSecondsPerSelection": 60
+ }
+}

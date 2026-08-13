@@ -1,0 +1,76 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  test:
+    name: Lint + tests
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-python@v6
+        with:
+          # Matches the Dockerfile base image.
+          python-version: "3.13"
+          cache: pip
+
+      - name: Install dev dependencies
+        run: pip install -r requirements-dev.in
+
+      - name: Lint
+        run: ruff check .
+
+      - name: Tests
+        run: pytest -q
+
+      - name: Import smoke (server wires up with no configuration at all)
+        run: |
+          python -c "
+          import asyncio, server
+          tools = asyncio.run(server.mcp.list_tools())
+          names = sorted(t.name for t in tools)
+          assert len(names) == 8, names
+          print('tools:', names)
+          "
+
+      - name: Lockfile is in sync with requirements.in
+        run: |
+          pip install uv
+          uv pip compile requirements.in -o /tmp/check.lock \
+            --generate-hashes --universal --python-version 3.13 --quiet
+          diff -u requirements.lock /tmp/check.lock \
+            || (echo "::error::requirements.lock is stale; regenerate it" && exit 1)
+
+  scan:
+    name: Trivy filesystem scan
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: aquasecurity/trivy-action@0.28.0
+        with:
+          scan-type: fs
+          scan-ref: .
+          severity: HIGH,CRITICAL
+          exit-code: "1"
+          ignore-unfixed: true
+
+  build:
+    name: Docker build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: docker/setup-buildx-action@v3
+      - name: Build image
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+          load: true
+          tags: mcp-fleaflicker:ci
+          sbom: true
+          provenance: true

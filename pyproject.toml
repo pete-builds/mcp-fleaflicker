@@ -1,0 +1,67 @@
+[build-system]
+requires = ["hatchling>=1.30.1"]
+build-backend = "hatchling.build"
+
+[project]
+name = "mcp-fleaflicker"
+version = "0.1.0"
+description = "MCP server for Fleaflicker fantasy leagues. Reads rosters, matchups, and drafts, and scores stat lines using the league's own published rules rather than a hardcoded scoring system."
+readme = "README.md"
+license = { file = "LICENSE" }
+authors = [{ name = "Pete Stergion", email = "pstergion@gmail.com" }]
+requires-python = ">=3.11"
+keywords = ["mcp", "fleaflicker", "fantasy-football", "claude", "nfl"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "fastmcp>=3.4.4",
+    "httpx>=0.28.1",
+    "uvicorn>=0.51.0",
+    "python-dotenv>=1.2.2",
+    "pydantic>=2.13.4",
+    "pydantic-settings>=2.14.1",
+    # Pinned to an immutable commit tarball until pete-mcp-core is on PyPI.
+    "pete-mcp-core @ https://github.com/pete-builds/pete-mcp-core/archive/15d210625cfcf1840b6b6e95cf10990214585104.tar.gz",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=9.1.1", "pytest-asyncio>=1.4.0", "respx>=0.23.1", "ruff>=0.16.2"]
+
+[project.scripts]
+mcp-fleaflicker = "server:main"
+
+[project.urls]
+Homepage = "https://github.com/pete-builds/mcp-fleaflicker"
+Repository = "https://github.com/pete-builds/mcp-fleaflicker"
+Issues = "https://github.com/pete-builds/mcp-fleaflicker/issues"
+
+[tool.hatch.metadata]
+allow-direct-references = true
+
+[tool.hatch.build.targets.wheel]
+only-include = ["server.py", "healthcheck.py", "clients", "tools"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "B", "UP", "C4", "SIM", "RUF"]
+ignore = ["E501"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["S101"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
+pythonpath = ["."]

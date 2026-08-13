@@ -1,0 +1,747 @@
+{
+ "game": {
+  "id": "56361068",
+  "away": {
+   "id": 88373,
+   "name": "Team 12",
+   "recordOverall": {
+    "wins": 4,
+    "losses": 9,
+    "winPercentage": {
+     "value": 0.30769232,
+     "formatted": ".308"
+    },
+    "rank": 14,
+    "formatted": "4-9"
+   },
+   "recordPostseason": {
+    "wins": 2,
+    "winPercentage": {
+     "value": 1.0,
+     "formatted": "1.000"
+    },
+    "rank": 14,
+    "formatted": "2-0"
+   },
+   "pointsFor": {
+    "value": 1287.82,
+    "formatted": "1,287.82"
+   },
+   "pointsAgainst": {
+    "value": 1649.08,
+    "formatted": "1,649.08"
+   },
+   "streak": {
+    "value": -5.0,
+    "formatted": "L5"
+   },
+   "waiverPosition": 14,
+   "draftPosition": 1,
+   "initials": "T"
+  },
+  "home": {
+   "id": 1260133,
+   "name": "Team 07",
+   "recordOverall": {
+    "wins": 9,
+    "losses": 4,
+    "winPercentage": {
+     "value": 0.6923077,
+     "formatted": ".692"
+    },
+    "rank": 5,
+    "formatted": "9-4"
+   },
+   "recordPostseason": {
+    "losses": 1,
+    "winPercentage": {
+     "formatted": ".000"
+    },
+    "rank": 3,
+    "formatted": "0-1"
+   },
+   "pointsFor": {
+    "value": 1669.3,
+    "formatted": "1,669.3"
+   },
+   "pointsAgainst": {
+    "value": 1478.42,
+    "formatted": "1,478.42"
+   },
+   "streak": {
+    "value": 1.0,
+    "formatted": "W1"
+   },
+   "waiverPosition": 5,
+   "draftPosition": 10,
+   "initials": "T"
+  },
+  "awayScore": {
+   "score": {
+    "value": 132.14,
+    "formatted": "132.14"
+   }
+  },
+  "homeScore": {
+   "score": {
+    "value": 123.40001,
+    "formatted": "123.4"
+   }
+  },
+  "homeResult": "LOSE",
+  "awayResult": "WIN",
+  "isFinalScore": true
+ },
+ "lineups": [
+  {
+   "group": "START",
+   "slots": [
+    {
+     "position": {
+      "label": "QB",
+      "group": "START",
+      "eligibility": [
+       "QB"
+      ],
+      "min": 1,
+      "max": 2,
+      "start": 1
+     },
+     "away": {
+      "proPlayer": {
+       "id": 15532,
+       "nameFull": "Joe Burrow",
+       "nameShort": "J. Burrow",
+       "proTeamAbbreviation": "CIN",
+       "position": "QB",
+       "nflByeWeek": 6,
+       "nameFirst": "Joe",
+       "nameLast": "Burrow",
+       "percentOwnedRatio": 0.97
+      },
+      "viewingActualPoints": {
+       "value": 10.82,
+       "formatted": "10.82"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 3,
+         "abbreviation": "Yd",
+         "nameSingular": "Passing Yard",
+         "namePlural": "Passing Yards"
+        },
+        "value": {
+         "value": 113.0,
+         "formatted": "113"
+        }
+       },
+       {
+        "category": {
+         "id": 29,
+         "abbreviation": "TD",
+         "nameSingular": "Offensive + Special Teams TD",
+         "namePlural": "Offensive + Special Teams TDs"
+        },
+        "value": {
+         "value": 1.0,
+         "formatted": "1"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "owner": {
+       "id": 88373,
+       "name": "Team 12",
+       "initials": "T"
+      },
+      "displayGroup": "PASSER",
+      "rankFantasy": {
+       "ordinal": 69,
+       "positions": [
+        {
+         "position": {
+          "label": "QB",
+          "group": "START",
+          "eligibility": [
+           "QB"
+          ]
+         },
+         "ordinal": 29,
+         "formatted": "29",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 42,
+       "positions": [
+        {
+         "position": {
+          "label": "QB",
+          "group": "START",
+          "eligibility": [
+           "QB"
+          ]
+         },
+         "ordinal": 4,
+         "formatted": "QB4",
+         "rating": "RATING_VERY_GOOD"
+        }
+       ],
+       "season": 2026
+      }
+     },
+     "home": {
+      "proPlayer": {
+       "id": 16262,
+       "nameFull": "Justin Fields",
+       "nameShort": "J. Fields",
+       "proTeamAbbreviation": "KC",
+       "position": "QB",
+       "nflByeWeek": 13,
+       "nameFirst": "Justin",
+       "nameLast": "Fields",
+       "percentOwnedRatio": 0.4
+      },
+      "viewingActualPoints": {
+       "value": 31.52,
+       "formatted": "31.52"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 3,
+         "abbreviation": "Yd",
+         "nameSingular": "Passing Yard",
+         "namePlural": "Passing Yards"
+        },
+        "value": {
+         "value": 218.0,
+         "formatted": "218"
+        }
+       },
+       {
+        "category": {
+         "id": 29,
+         "abbreviation": "TD",
+         "nameSingular": "Offensive + Special Teams TD",
+         "namePlural": "Offensive + Special Teams TDs"
+        },
+        "value": {
+         "value": 3.0,
+         "formatted": "3"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "owner": {
+       "id": 1260133,
+       "name": "Team 07",
+       "initials": "T"
+      },
+      "displayGroup": "PASSER",
+      "rankFantasy": {
+       "ordinal": 75,
+       "positions": [
+        {
+         "position": {
+          "label": "QB",
+          "group": "START",
+          "eligibility": [
+           "QB"
+          ]
+         },
+         "ordinal": 30,
+         "formatted": "30",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 231,
+       "positions": [
+        {
+         "position": {
+          "label": "QB",
+          "group": "START",
+          "eligibility": [
+           "QB"
+          ]
+         },
+         "ordinal": 40,
+         "formatted": "QB40",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2026
+      }
+     },
+     "positionColor": [
+      "DRAFT_BOARD_RED"
+     ]
+    },
+    {
+     "position": {
+      "label": "QB/RB/WR/TE",
+      "group": "START",
+      "eligibility": [
+       "QB",
+       "RB",
+       "WR",
+       "TE"
+      ],
+      "start": 1
+     },
+     "away": {
+      "proPlayer": {
+       "id": 15516,
+       "nameFull": "Justin Herbert",
+       "nameShort": "J. Herbert",
+       "proTeamAbbreviation": "LAC",
+       "position": "QB",
+       "nflByeWeek": 7,
+       "nameFirst": "Justin",
+       "nameLast": "Herbert",
+       "percentOwnedRatio": 0.95
+      },
+      "viewingActualPoints": {
+       "value": 36.92,
+       "formatted": "36.92"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 3,
+         "abbreviation": "Yd",
+         "nameSingular": "Passing Yard",
+         "namePlural": "Passing Yards"
+        },
+        "value": {
+         "value": 318.0,
+         "formatted": "318"
+        }
+       },
+       {
+        "category": {
+         "id": 29,
+         "abbreviation": "TD",
+         "nameSingular": "Offensive + Special Teams TD",
+         "namePlural": "Offensive + Special Teams TDs"
+        },
+        "value": {
+         "value": 3.0,
+         "formatted": "3"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "owner": {
+       "id": 88373,
+       "name": "Team 12",
+       "initials": "T"
+      },
+      "displayGroup": "PASSER",
+      "rankFantasy": {
+       "ordinal": 11,
+       "positions": [
+        {
+         "position": {
+          "label": "QB",
+          "group": "START",
+          "eligibility": [
+           "QB"
+          ]
+         },
+         "ordinal": 11,
+         "formatted": "11"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 68,
+       "positions": [
+        {
+         "position": {
+          "label": "QB",
+          "group": "START",
+          "eligibility": [
+           "QB"
+          ]
+         },
+         "ordinal": 8,
+         "formatted": "QB8",
+         "rating": "RATING_GOOD"
+        }
+       ],
+       "season": 2026
+      }
+     },
+     "home": {
+      "proPlayer": {
+       "id": 19243,
+       "nameFull": "Cam Ward",
+       "nameShort": "C. Ward",
+       "proTeamAbbreviation": "TEN",
+       "position": "QB",
+       "nflByeWeek": 9,
+       "nameFirst": "Cam",
+       "nameLast": "Ward",
+       "percentOwnedRatio": 0.69
+      },
+      "viewingActualPoints": {
+       "value": 2.48,
+       "formatted": "2.48"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 3,
+         "abbreviation": "Yd",
+         "nameSingular": "Passing Yard",
+         "namePlural": "Passing Yards"
+        },
+        "value": {
+         "value": 112.0,
+         "formatted": "112"
+        }
+       },
+       {
+        "category": {
+         "id": 29,
+         "abbreviation": "TD",
+         "nameSingular": "Offensive + Special Teams TD",
+         "namePlural": "Offensive + Special Teams TDs"
+        },
+        "value": {
+         "formatted": "0"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "owner": {
+       "id": 1260133,
+       "name": "Team 07",
+       "initials": "T"
+      },
+      "displayGroup": "PASSER",
+      "rankFantasy": {
+       "ordinal": 32,
+       "positions": [
+        {
+         "position": {
+          "label": "QB",
+          "group": "START",
+          "eligibility": [
+           "QB"
+          ]
+         },
+         "ordinal": 22,
+         "formatted": "22",
+         "rating": "RATING_BAD"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 128,
+       "positions": [
+        {
+         "position": {
+          "label": "QB",
+          "group": "START",
+          "eligibility": [
+           "QB"
+          ]
+         },
+         "ordinal": 24,
+         "formatted": "QB24",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2026
+      }
+     },
+     "positionColor": [
+      "DRAFT_BOARD_GREEN",
+      "DRAFT_BOARD_BLUE",
+      "DRAFT_BOARD_YELLOW",
+      "DRAFT_BOARD_RED"
+     ]
+    },
+    {
+     "position": {
+      "label": "RB",
+      "group": "START",
+      "eligibility": [
+       "RB"
+      ],
+      "min": 3,
+      "max": 5,
+      "start": 1
+     },
+     "away": {
+      "proPlayer": {
+       "id": 19247,
+       "nameFull": "Ashton Jeanty",
+       "nameShort": "A. Jeanty",
+       "proTeamAbbreviation": "LV",
+       "position": "RB",
+       "nflByeWeek": 13,
+       "nameFirst": "Ashton",
+       "nameLast": "Jeanty",
+       "percentOwnedRatio": 0.96
+      },
+      "viewingActualPoints": {
+       "value": 12.0,
+       "formatted": "12"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 22,
+         "abbreviation": "Yd",
+         "nameSingular": "Rushing Yard",
+         "namePlural": "Rushing Yards"
+        },
+        "value": {
+         "value": 38.0,
+         "formatted": "38"
+        }
+       },
+       {
+        "category": {
+         "id": 175,
+         "abbreviation": "Rec",
+         "nameSingular": "Target % Caught",
+         "namePlural": "Target % Caught"
+        },
+        "value": {
+         "value": 100.0,
+         "formatted": "2/2"
+        }
+       },
+       {
+        "category": {
+         "id": 42,
+         "abbreviation": "Yd",
+         "nameSingular": "Receiving Yard",
+         "namePlural": "Receiving Yards"
+        },
+        "value": {
+         "value": 2.0,
+         "formatted": "2"
+        }
+       },
+       {
+        "category": {
+         "id": 29,
+         "abbreviation": "TD",
+         "nameSingular": "Offensive + Special Teams TD",
+         "namePlural": "Offensive + Special Teams TDs"
+        },
+        "value": {
+         "value": 1.0,
+         "formatted": "1"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "owner": {
+       "id": 88373,
+       "name": "Team 12",
+       "initials": "T"
+      },
+      "displayGroup": "RUSHER",
+      "rankFantasy": {
+       "ordinal": 48,
+       "positions": [
+        {
+         "position": {
+          "label": "RB",
+          "group": "START",
+          "eligibility": [
+           "RB"
+          ]
+         },
+         "ordinal": 15,
+         "formatted": "15"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 18,
+       "positions": [
+        {
+         "position": {
+          "label": "RB",
+          "group": "START",
+          "eligibility": [
+           "RB"
+          ]
+         },
+         "ordinal": 8,
+         "formatted": "RB8",
+         "rating": "RATING_VERY_GOOD"
+        }
+       ],
+       "season": 2026
+      }
+     },
+     "home": {
+      "proPlayer": {
+       "id": 15604,
+       "nameFull": "Jonathan Taylor",
+       "nameShort": "J. Taylor",
+       "proTeamAbbreviation": "IND",
+       "position": "RB",
+       "nflByeWeek": 13,
+       "nameFirst": "Jonathan",
+       "nameLast": "Taylor",
+       "percentOwnedRatio": 0.98
+      },
+      "viewingActualPoints": {
+       "value": 12.8,
+       "formatted": "12.8"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 22,
+         "abbreviation": "Yd",
+         "nameSingular": "Rushing Yard",
+         "namePlural": "Rushing Yards"
+        },
+        "value": {
+         "value": 71.0,
+         "formatted": "71"
+        }
+       },
+       {
+        "category": {
+         "id": 175,
+         "abbreviation": "Rec",
+         "nameSingular": "Target % Caught",
+         "namePlural": "Target % Caught"
+        },
+        "value": {
+         "value": 100.0,
+         "formatted": "3/3"
+        }
+       },
+       {
+        "category": {
+         "id": 42,
+         "abbreviation": "Yd",
+         "nameSingular": "Receiving Yard",
+         "namePlural": "Receiving Yards"
+        },
+        "value": {
+         "value": 27.0,
+         "formatted": "27"
+        }
+       },
+       {
+        "category": {
+         "id": 29,
+         "abbreviation": "TD",
+         "nameSingular": "Offensive + Special Teams TD",
+         "namePlural": "Offensive + Special Teams TDs"
+        },
+        "value": {
+         "formatted": "0"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "owner": {
+       "id": 1260133,
+       "name": "Team 07",
+       "initials": "T"
+      },
+      "displayGroup": "RUSHER",
+      "rankFantasy": {
+       "ordinal": 12,
+       "positions": [
+        {
+         "position": {
+          "label": "RB",
+          "group": "START",
+          "eligibility": [
+           "RB"
+          ]
+         },
+         "ordinal": 1,
+         "formatted": "1",
+         "rating": "RATING_VERY_GOOD"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 6,
+       "positions": [
+        {
+         "position": {
+          "label": "RB",
+          "group": "START",
+          "eligibility": [
+           "RB"
+          ]
+         },
+         "ordinal": 3,
+         "formatted": "RB3",
+         "rating": "RATING_VERY_GOOD"
+        }
+       ],
+       "season": 2026
+      }
+     },
+     "positionColor": [
+      "DRAFT_BOARD_GREEN"
+     ]
+    }
+   ]
+  }
+ ],
+ "pointsAway": {
+  "total": {
+   "value": {
+    "value": 132.14,
+    "formatted": "132.14"
+   },
+   "optimum": {
+    "value": 135.22,
+    "formatted": "135.22"
+   }
+  }
+ },
+ "pointsHome": {
+  "total": {
+   "value": {
+    "value": 123.40001,
+    "formatted": "123.4"
+   },
+   "optimum": {
+    "value": 142.82,
+    "formatted": "142.82"
+   }
+  }
+ },
+ "eligiblePeriods": [
+  {
+   "ordinal": 1,
+   "season": 2025,
+   "startEpochMilli": "1756807200000"
+  }
+ ],
+ "scoringPeriod": {
+  "ordinal": 1,
+  "season": 2025,
+  "startEpochMilli": "1756807200000"
+ }
+}

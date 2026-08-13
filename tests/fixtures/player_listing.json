@@ -1,0 +1,737 @@
+{
+ "players": [
+  {
+   "proPlayer": {
+    "id": 6038,
+    "nameFull": "Matthew Stafford",
+    "nameShort": "M. Stafford",
+    "proTeamAbbreviation": "LAR",
+    "position": "QB",
+    "nflByeWeek": 11,
+    "news": [
+     {
+      "timeEpochMilli": "1786360466000",
+      "contents": "Hey RotoBallers! Training camp is in full swing, and the Hall of Fame game is just around the corner, which means it's time to talk league-winners. The phrase \"league-winners\" has various meanings, as it could be striking gold on a breakout or finding a discounted veteran in the later rounds. Last season, we saw a perfect example of both of these as Drake Maye emerged as a legit superstar and veteran Matthew Stafford took home the MVP.For each position, we will highlight two names I will look to...",
+      "url": "https://www.rotoballer.com/8-fantasy-football-league-winners-to-draft-andys-must-have-players-2026/1901703",
+      "title": "Andy Smith's Fantasy Football League-Winners: 8 Must-Draft Players (2026)"
+     }
+    ],
+    "nameFirst": "Matthew",
+    "nameLast": "Stafford",
+    "percentOwnedRatio": 0.95
+   },
+   "viewingActualPoints": {
+    "value": 461.38004,
+    "formatted": "461.38"
+   },
+   "viewingActualStats": [
+    {
+     "category": {
+      "id": 12,
+      "abbreviation": "%",
+      "nameSingular": "Completion Percentage",
+      "namePlural": "Completion Percentage"
+     },
+     "value": {
+      "value": 64.99162,
+      "formatted": "65.0"
+     }
+    },
+    {
+     "category": {
+      "id": 3,
+      "abbreviation": "Yd",
+      "nameSingular": "Passing Yard",
+      "namePlural": "Passing Yards"
+     },
+     "value": {
+      "value": 4707.0,
+      "formatted": "4,707"
+     }
+    },
+    {
+     "category": {
+      "id": 5,
+      "abbreviation": "TD",
+      "nameSingular": "Passing TD",
+      "namePlural": "Passing TDs"
+     },
+     "value": {
+      "value": 46.0,
+      "formatted": "46"
+     }
+    },
+    {
+     "category": {
+      "id": 7,
+      "abbreviation": "INT",
+      "nameSingular": "Interception",
+      "namePlural": "Interceptions",
+      "lowerIsBetter": true
+     },
+     "value": {
+      "value": 8.0,
+      "formatted": "8"
+     }
+    }
+   ],
+   "viewingActualPointsAverage": {
+    "value": 27.140001,
+    "formatted": "27.14"
+   },
+   "viewingFormat": "TOTAL",
+   "displayGroup": "PASSER",
+   "rankFantasy": {
+    "ordinal": 1,
+    "positions": [
+     {
+      "position": {
+       "label": "QB",
+       "group": "START",
+       "eligibility": [
+        "QB"
+       ]
+      },
+      "ordinal": 1,
+      "formatted": "1",
+      "rating": "RATING_VERY_GOOD"
+     }
+    ],
+    "season": 2025
+   },
+   "rankDraft": {
+    "ordinal": 102,
+    "positions": [
+     {
+      "position": {
+       "label": "QB",
+       "group": "START",
+       "eligibility": [
+        "QB"
+       ]
+      },
+      "ordinal": 15,
+      "formatted": "QB15"
+     }
+    ],
+    "season": 2026
+   },
+   "seasonTotal": {
+    "value": 461.38004,
+    "formatted": "461.38"
+   },
+   "seasonAverage": {
+    "value": 27.140001,
+    "formatted": "27.14"
+   }
+  },
+  {
+   "proPlayer": {
+    "id": 13761,
+    "nameFull": "Josh Allen",
+    "nameShort": "J. Allen",
+    "proTeamAbbreviation": "BUF",
+    "position": "QB",
+    "nflByeWeek": 7,
+    "news": [
+     {
+      "timeEpochMilli": "1786545600000",
+      "contents": "Dwain McFarland goes in-depth through his QB positional draft strategy for 2026 fantasy football drafts, identifying traits to target in league-winning QBs, high-priority targets and site-specific ADP values.",
+      "url": "https://www.fantasylife.com/articles/fantasy/quarterback-fantasy-football-draft-strategy-for-2026",
+      "title": "Quarterback Fantasy Football Draft Strategy For 2026: Jalen Hurts Headlines Priority Targets"
+     }
+    ],
+    "nameFirst": "Josh",
+    "nameLast": "Allen",
+    "percentOwnedRatio": 0.98
+   },
+   "viewingActualPoints": {
+    "value": 427.61996,
+    "formatted": "427.62"
+   },
+   "viewingActualStats": [
+    {
+     "category": {
+      "id": 12,
+      "abbreviation": "%",
+      "nameSingular": "Completion Percentage",
+      "namePlural": "Completion Percentage"
+     },
+     "value": {
+      "value": 69.347824,
+      "formatted": "69.3"
+     }
+    },
+    {
+     "category": {
+      "id": 3,
+      "abbreviation": "Yd",
+      "nameSingular": "Passing Yard",
+      "namePlural": "Passing Yards"
+     },
+     "value": {
+      "value": 3668.0,
+      "formatted": "3,668"
+     }
+    },
+    {
+     "category": {
+      "id": 5,
+      "abbreviation": "TD",
+      "nameSingular": "Passing TD",
+      "namePlural": "Passing TDs"
+     },
+     "value": {
+      "value": 25.0,
+      "formatted": "25"
+     }
+    },
+    {
+     "category": {
+      "id": 7,
+      "abbreviation": "INT",
+      "nameSingular": "Interception",
+      "namePlural": "Interceptions",
+      "lowerIsBetter": true
+     },
+     "value": {
+      "value": 10.0,
+      "formatted": "10"
+     }
+    }
+   ],
+   "viewingActualPointsAverage": {
+    "value": 26.726248,
+    "formatted": "26.73"
+   },
+   "viewingFormat": "TOTAL",
+   "displayGroup": "PASSER",
+   "rankFantasy": {
+    "ordinal": 2,
+    "positions": [
+     {
+      "position": {
+       "label": "QB",
+       "group": "START",
+       "eligibility": [
+        "QB"
+       ]
+      },
+      "ordinal": 2,
+      "formatted": "2",
+      "rating": "RATING_VERY_GOOD"
+     }
+    ],
+    "season": 2025
+   },
+   "rankDraft": {
+    "ordinal": 23,
+    "positions": [
+     {
+      "position": {
+       "label": "QB",
+       "group": "START",
+       "eligibility": [
+        "QB"
+       ]
+      },
+      "ordinal": 1,
+      "formatted": "QB1",
+      "rating": "RATING_VERY_GOOD"
+     }
+    ],
+    "season": 2026
+   },
+   "seasonTotal": {
+    "value": 427.61996,
+    "formatted": "427.62"
+   },
+   "seasonAverage": {
+    "value": 26.726248,
+    "formatted": "26.73"
+   }
+  },
+  {
+   "proPlayer": {
+    "id": 18357,
+    "nameFull": "Drake Maye",
+    "nameShort": "D. Maye",
+    "proTeamAbbreviation": "NE",
+    "position": "QB",
+    "nflByeWeek": 11,
+    "news": [
+     {
+      "timeEpochMilli": "1786521600000",
+      "contents": "Kody Malstrom offers up three NFL player props that don't align with the 2026 FantasyLife projections, including a favorable line on Drake Maye's passing yards.",
+      "url": "https://www.fantasylife.com/articles/fantasy/my-3-favorite-nfl-player-props-for-2026",
+      "title": "My 3 Favorite NFL Player Props For 2026: Can Drake Maye Repeat His MVP-Level Performance?"
+     }
+    ],
+    "nameFirst": "Drake",
+    "nameLast": "Maye",
+    "percentOwnedRatio": 0.96
+   },
+   "viewingActualPoints": {
+    "value": 421.96002,
+    "formatted": "421.96"
+   },
+   "viewingActualStats": [
+    {
+     "category": {
+      "id": 12,
+      "abbreviation": "%",
+      "nameSingular": "Completion Percentage",
+      "namePlural": "Completion Percentage"
+     },
+     "value": {
+      "value": 71.95122,
+      "formatted": "72.0"
+     }
+    },
+    {
+     "category": {
+      "id": 3,
+      "abbreviation": "Yd",
+      "nameSingular": "Passing Yard",
+      "namePlural": "Passing Yards"
+     },
+     "value": {
+      "value": 4394.0,
+      "formatted": "4,394"
+     }
+    },
+    {
+     "category": {
+      "id": 5,
+      "abbreviation": "TD",
+      "nameSingular": "Passing TD",
+      "namePlural": "Passing TDs"
+     },
+     "value": {
+      "value": 31.0,
+      "formatted": "31"
+     }
+    },
+    {
+     "category": {
+      "id": 7,
+      "abbreviation": "INT",
+      "nameSingular": "Interception",
+      "namePlural": "Interceptions",
+      "lowerIsBetter": true
+     },
+     "value": {
+      "value": 8.0,
+      "formatted": "8"
+     }
+    }
+   ],
+   "viewingActualPointsAverage": {
+    "value": 24.821178,
+    "formatted": "24.82"
+   },
+   "viewingFormat": "TOTAL",
+   "displayGroup": "PASSER",
+   "rankFantasy": {
+    "ordinal": 3,
+    "positions": [
+     {
+      "position": {
+       "label": "QB",
+       "group": "START",
+       "eligibility": [
+        "QB"
+       ]
+      },
+      "ordinal": 3,
+      "formatted": "3",
+      "rating": "RATING_VERY_GOOD"
+     }
+    ],
+    "season": 2025
+   },
+   "rankDraft": {
+    "ordinal": 35,
+    "positions": [
+     {
+      "position": {
+       "label": "QB",
+       "group": "START",
+       "eligibility": [
+        "QB"
+       ]
+      },
+      "ordinal": 3,
+      "formatted": "QB3",
+      "rating": "RATING_VERY_GOOD"
+     }
+    ],
+    "season": 2026
+   },
+   "seasonTotal": {
+    "value": 421.96002,
+    "formatted": "421.96"
+   },
+   "seasonAverage": {
+    "value": 24.821178,
+    "formatted": "24.82"
+   }
+  },
+  {
+   "proPlayer": {
+    "id": 12892,
+    "nameFull": "Christian McCaffrey",
+    "nameShort": "C. McCaffrey",
+    "proTeamAbbreviation": "SF",
+    "position": "RB",
+    "nflByeWeek": 8,
+    "news": [
+     {
+      "timeEpochMilli": "1786469163000",
+      "contents": "Christian McCaffrey remains absent from practice on Tuesday due to tightness.",
+      "analysis": "It appears to be precautionary for McCaffrey. He remains day-to-day.",
+      "title": "Christian McCaffrey still not practicing Tuesday due to tightness"
+     },
+     {
+      "timeEpochMilli": "1786471266000",
+      "contents": "San Francisco 49ers running back Christian McCaffrey (undisclosed) is not practicing at training camp for the second straight day on Tuesday, according to Cam Inman of the Bay Area News Group. McCaffrey is being held out so far this week with undisclosed \"tightness,\" but offensive coordinator Klay Kubiak has downplayed CMC's situation and said the team is \"just managing\" the All-Pro RB. The 49ers are already pretty banged up early in training camp, and as a result, they are resting some of ...",
+      "url": "https://www.rotoballer.com/player-news/christian-mccaffrey-not-practicing-for-second-straight-day/1907092",
+      "title": "Christian McCaffrey Not Practicing for Second Straight Day"
+     }
+    ],
+    "nameFirst": "Christian",
+    "nameLast": "McCaffrey",
+    "percentOwnedRatio": 0.98
+   },
+   "viewingActualPoints": {
+    "value": 421.60007,
+    "formatted": "421.6"
+   },
+   "viewingActualStats": [
+    {
+     "category": {
+      "id": 22,
+      "abbreviation": "Yd",
+      "nameSingular": "Rushing Yard",
+      "namePlural": "Rushing Yards"
+     },
+     "value": {
+      "value": 1202.0,
+      "formatted": "1,202"
+     }
+    },
+    {
+     "category": {
+      "id": 175,
+      "abbreviation": "Rec",
+      "nameSingular": "Target % Caught",
+      "namePlural": "Target % Caught"
+     },
+     "value": {
+      "value": 79.06977,
+      "formatted": "102/129"
+     }
+    },
+    {
+     "category": {
+      "id": 42,
+      "abbreviation": "Yd",
+      "nameSingular": "Receiving Yard",
+      "namePlural": "Receiving Yards"
+     },
+     "value": {
+      "value": 924.0,
+      "formatted": "924"
+     }
+    },
+    {
+     "category": {
+      "id": 29,
+      "abbreviation": "TD",
+      "nameSingular": "Offensive + Special Teams TD",
+      "namePlural": "Offensive + Special Teams TDs"
+     },
+     "value": {
+      "value": 17.0,
+      "formatted": "17"
+     }
+    }
+   ],
+   "viewingActualPointsAverage": {
+    "value": 24.800003,
+    "formatted": "24.8"
+   },
+   "viewingFormat": "TOTAL",
+   "displayGroup": "RUSHER",
+   "rankFantasy": {
+    "ordinal": 4,
+    "positions": [
+     {
+      "position": {
+       "label": "RB",
+       "group": "START",
+       "eligibility": [
+        "RB"
+       ]
+      },
+      "ordinal": 1,
+      "formatted": "1",
+      "rating": "RATING_VERY_GOOD"
+     }
+    ],
+    "season": 2025
+   },
+   "rankDraft": {
+    "ordinal": 8,
+    "positions": [
+     {
+      "position": {
+       "label": "RB",
+       "group": "START",
+       "eligibility": [
+        "RB"
+       ]
+      },
+      "ordinal": 4,
+      "formatted": "RB4",
+      "rating": "RATING_VERY_GOOD"
+     }
+    ],
+    "season": 2026
+   },
+   "seasonTotal": {
+    "value": 421.60007,
+    "formatted": "421.6"
+   },
+   "seasonAverage": {
+    "value": 24.800003,
+    "formatted": "24.8"
+   }
+  },
+  {
+   "proPlayer": {
+    "id": 12159,
+    "nameFull": "Dak Prescott",
+    "nameShort": "D. Prescott",
+    "proTeamAbbreviation": "DAL",
+    "position": "QB",
+    "nflByeWeek": 14,
+    "news": [
+     {
+      "timeEpochMilli": "1786521600000",
+      "contents": "John Supowitz shares his three favorite season-long bets on Underdog Fantasy, including the Saints to win their division.",
+      "url": "https://www.fantasylife.com/articles/betting/underdog-pickem-futures-2026-saints-to-win-nfc-south",
+      "title": "Underdog Pick'Em Futures For 2026: Saints to Win the NFC South & More"
+     }
+    ],
+    "nameFirst": "Dak",
+    "nameLast": "Prescott",
+    "percentOwnedRatio": 0.96
+   },
+   "viewingActualPoints": {
+    "value": 401.78,
+    "formatted": "401.78"
+   },
+   "viewingActualStats": [
+    {
+     "category": {
+      "id": 12,
+      "abbreviation": "%",
+      "nameSingular": "Completion Percentage",
+      "namePlural": "Completion Percentage"
+     },
+     "value": {
+      "value": 67.333336,
+      "formatted": "67.3"
+     }
+    },
+    {
+     "category": {
+      "id": 3,
+      "abbreviation": "Yd",
+      "nameSingular": "Passing Yard",
+      "namePlural": "Passing Yards"
+     },
+     "value": {
+      "value": 4552.0,
+      "formatted": "4,552"
+     }
+    },
+    {
+     "category": {
+      "id": 5,
+      "abbreviation": "TD",
+      "nameSingular": "Passing TD",
+      "namePlural": "Passing TDs"
+     },
+     "value": {
+      "value": 30.0,
+      "formatted": "30"
+     }
+    },
+    {
+     "category": {
+      "id": 7,
+      "abbreviation": "INT",
+      "nameSingular": "Interception",
+      "namePlural": "Interceptions",
+      "lowerIsBetter": true
+     },
+     "value": {
+      "value": 10.0,
+      "formatted": "10"
+     }
+    }
+   ],
+   "viewingActualPointsAverage": {
+    "value": 23.634117,
+    "formatted": "23.63"
+   },
+   "viewingFormat": "TOTAL",
+   "displayGroup": "PASSER",
+   "rankFantasy": {
+    "ordinal": 5,
+    "positions": [
+     {
+      "position": {
+       "label": "QB",
+       "group": "START",
+       "eligibility": [
+        "QB"
+       ]
+      },
+      "ordinal": 4,
+      "formatted": "4",
+      "rating": "RATING_VERY_GOOD"
+     }
+    ],
+    "season": 2025
+   },
+   "rankDraft": {
+    "ordinal": 78,
+    "positions": [
+     {
+      "position": {
+       "label": "QB",
+       "group": "START",
+       "eligibility": [
+        "QB"
+       ]
+      },
+      "ordinal": 10,
+      "formatted": "QB10"
+     }
+    ],
+    "season": 2026
+   },
+   "seasonTotal": {
+    "value": 401.78,
+    "formatted": "401.78"
+   },
+   "seasonAverage": {
+    "value": 23.634117,
+    "formatted": "23.63"
+   }
+  }
+ ],
+ "eligibleSorts": [
+  "SORT_SEASON_TOTAL",
+  "SORT_SEASON_AVERAGE",
+  "SORT_SCORING_PERIOD",
+  "SORT_LAST_X_SHORT",
+  "SORT_LAST_X_LONG"
+ ],
+ "eligibleFilterPositions": [
+  {
+   "label": "ALL",
+   "group": "START",
+   "eligibility": [
+    "QB",
+    "RB",
+    "WR",
+    "TE",
+    "D/ST"
+   ]
+  },
+  {
+   "label": "QB",
+   "group": "START",
+   "eligibility": [
+    "QB"
+   ]
+  },
+  {
+   "label": "RB",
+   "group": "START",
+   "eligibility": [
+    "RB"
+   ]
+  },
+  {
+   "label": "WR",
+   "group": "START",
+   "eligibility": [
+    "WR"
+   ]
+  },
+  {
+   "label": "TE",
+   "group": "START",
+   "eligibility": [
+    "TE"
+   ]
+  },
+  {
+   "label": "RB/WR/TE",
+   "group": "START",
+   "eligibility": [
+    "RB",
+    "WR",
+    "TE"
+   ]
+  },
+  {
+   "label": "QB/RB/WR/TE",
+   "group": "START",
+   "eligibility": [
+    "QB",
+    "RB",
+    "WR",
+    "TE"
+   ]
+  },
+  {
+   "label": "D/ST",
+   "group": "START",
+   "eligibility": [
+    "D/ST"
+   ]
+  }
+ ],
+ "hasRookies": true,
+ "lastXShortDuration": 3,
+ "lastXLongDuration": 5,
+ "resultOffsetNext": 30,
+ "sort": "SORT_SEASON_TOTAL",
+ "filter": {
+  "position": {
+   "label": "ALL",
+   "group": "START",
+   "eligibility": [
+    "QB",
+    "RB",
+    "WR",
+    "TE",
+    "D/ST"
+   ]
+  }
+ },
+ "resultTotal": 1300,
+ "sortSeasons": {
+  "eligibleValues": [
+   2025,
+   2026
+  ],
+  "selectedValue": 2025
+ }
+}

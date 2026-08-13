@@ -1,0 +1,1226 @@
+{
+ "groups": [
+  {
+   "group": "START",
+   "slots": [
+    {
+     "position": {
+      "label": "QB",
+      "group": "START",
+      "eligibility": [
+       "QB"
+      ],
+      "min": 1,
+      "max": 2,
+      "start": 1
+     },
+     "leaguePlayer": {
+      "proPlayer": {
+       "id": 19243,
+       "nameFull": "Cam Ward",
+       "nameShort": "C. Ward",
+       "proTeamAbbreviation": "TEN",
+       "position": "QB",
+       "nflByeWeek": 9,
+       "nameFirst": "Cam",
+       "nameLast": "Ward",
+       "percentOwnedRatio": 0.69
+      },
+      "viewingActualPoints": {
+       "value": 22.04,
+       "formatted": "22.04"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 12,
+         "abbreviation": "%",
+         "nameSingular": "Completion Percentage",
+         "namePlural": "Completion Percentage",
+         "summaryLabelIfDiffersFromAbbreviation": " "
+        },
+        "value": {
+         "value": 52.5,
+         "formatted": "21/40"
+        }
+       },
+       {
+        "category": {
+         "id": 3,
+         "abbreviation": "Yd",
+         "nameSingular": "Passing Yard",
+         "namePlural": "Passing Yards"
+        },
+        "value": {
+         "value": 251.0,
+         "formatted": "251"
+        }
+       },
+       {
+        "category": {
+         "id": 5,
+         "abbreviation": "TD",
+         "nameSingular": "Passing TD",
+         "namePlural": "Passing TDs"
+        },
+        "value": {
+         "value": 2.0,
+         "formatted": "2"
+        }
+       },
+       {
+        "category": {
+         "id": 7,
+         "abbreviation": "INT",
+         "nameSingular": "Interception",
+         "namePlural": "Interceptions",
+         "lowerIsBetter": true
+        },
+        "value": {
+         "formatted": "0"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "displayGroup": "PASSER",
+      "rankFantasy": {
+       "ordinal": 56,
+       "positions": [
+        {
+         "position": {
+          "label": "QB",
+          "group": "START",
+          "eligibility": [
+           "QB"
+          ]
+         },
+         "ordinal": 24,
+         "formatted": "24",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 151,
+       "positions": [
+        {
+         "position": {
+          "label": "QB",
+          "group": "START",
+          "eligibility": [
+           "QB"
+          ]
+         },
+         "ordinal": 24,
+         "formatted": "QB24",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2026
+      },
+      "seasonTotal": {
+       "value": 220.66,
+       "formatted": "220.66"
+      },
+      "seasonAverage": {
+       "value": 12.9800005,
+       "formatted": "12.98"
+      }
+     }
+    },
+    {
+     "position": {
+      "label": "QB/RB/WR/TE",
+      "group": "START",
+      "eligibility": [
+       "QB",
+       "RB",
+       "WR",
+       "TE"
+      ],
+      "start": 1
+     },
+     "leaguePlayer": {
+      "proPlayer": {
+       "id": 13770,
+       "nameFull": "Sam Darnold",
+       "nameShort": "S. Darnold",
+       "proTeamAbbreviation": "SEA",
+       "position": "QB",
+       "nflByeWeek": 11,
+       "news": [
+        {
+         "timeEpochMilli": "1786413965000",
+         "contents": "After helping the Seattle Seahawks win the Super Bowl in his first year with the team in 2025, veteran quarterback Sam Darnold has been looking to get more comfortable in training camp this summer in new offensive coordinator Brian Fleury's scheme, according to Jeff Howe of The Athletic. Darnold and Fleury overlapped with the San Francisco 49ers, but Fleury has never called plays before. It gives the two men \"a nice foundation with a ton of carryover within the system,\" but they need experience...",
+         "url": "https://www.rotoballer.com/player-news/sam-darnold-working-to-gain-comfort-in-new-offensive-scheme/1906609",
+         "title": "Sam Darnold Working to Gain Comfort in New Offensive Scheme"
+        }
+       ],
+       "nameFirst": "Sam",
+       "nameLast": "Darnold",
+       "percentOwnedRatio": 0.84
+      },
+      "viewingActualPoints": {
+       "value": 10.08,
+       "formatted": "10.08"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 12,
+         "abbreviation": "%",
+         "nameSingular": "Completion Percentage",
+         "namePlural": "Completion Percentage",
+         "summaryLabelIfDiffersFromAbbreviation": " "
+        },
+        "value": {
+         "value": 66.666664,
+         "formatted": "18/27"
+        }
+       },
+       {
+        "category": {
+         "id": 3,
+         "abbreviation": "Yd",
+         "nameSingular": "Passing Yard",
+         "namePlural": "Passing Yards"
+        },
+        "value": {
+         "value": 147.0,
+         "formatted": "147"
+        }
+       },
+       {
+        "category": {
+         "id": 5,
+         "abbreviation": "TD",
+         "nameSingular": "Passing TD",
+         "namePlural": "Passing TDs"
+        },
+        "value": {
+         "value": 1.0,
+         "formatted": "1"
+        }
+       },
+       {
+        "category": {
+         "id": 7,
+         "abbreviation": "INT",
+         "nameSingular": "Interception",
+         "namePlural": "Interceptions",
+         "lowerIsBetter": true
+        },
+        "value": {
+         "value": 1.0,
+         "formatted": "1"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "displayGroup": "PASSER",
+      "rankFantasy": {
+       "ordinal": 25,
+       "positions": [
+        {
+         "position": {
+          "label": "QB",
+          "group": "START",
+          "eligibility": [
+           "QB"
+          ]
+         },
+         "ordinal": 13,
+         "formatted": "13"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 140,
+       "positions": [
+        {
+         "position": {
+          "label": "QB",
+          "group": "START",
+          "eligibility": [
+           "QB"
+          ]
+         },
+         "ordinal": 22,
+         "formatted": "QB22",
+         "rating": "RATING_BAD"
+        }
+       ],
+       "season": 2026
+      },
+      "seasonTotal": {
+       "value": 298.41998,
+       "formatted": "298.42"
+      },
+      "seasonAverage": {
+       "value": 17.554117,
+       "formatted": "17.55"
+      }
+     }
+    },
+    {
+     "position": {
+      "label": "RB",
+      "group": "START",
+      "eligibility": [
+       "RB"
+      ],
+      "min": 3,
+      "max": 5,
+      "start": 1
+     },
+     "leaguePlayer": {
+      "proPlayer": {
+       "id": 16890,
+       "nameFull": "Kenneth Walker",
+       "nameShort": "K. Walker",
+       "proTeamAbbreviation": "KC",
+       "position": "RB",
+       "nflByeWeek": 11,
+       "news": [
+        {
+         "timeEpochMilli": "1786556227000",
+         "contents": "Kansas City Chiefs running back Kenneth Walkercontinues to make a strong impression on his new teammates. According to Charles Goldman, Travis Kelce said Walker is \"going to be a hell of a ball player for us,\" praised his all-around traits, and called him an \"absolute superstar\" on and off the field. Walker signed with Kansas City in March after rushing for 1,027 yards and five touchdowns on 221 carries for Seattle last season. He added 31 catches for 282 yards, then closed out the year by ...",
+         "url": "https://www.rotoballer.com/player-news/kenneth-walker-iii-called-an-absolute-superstar-by-travis-kelce/1907678",
+         "title": "Kenneth Walker Called an \"Absolute Superstar\""
+        }
+       ],
+       "nameFirst": "Kenneth",
+       "nameLast": "Walker",
+       "percentOwnedRatio": 0.96
+      },
+      "viewingActualPoints": {
+       "value": 6.7,
+       "formatted": "6.7"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 22,
+         "abbreviation": "Yd",
+         "nameSingular": "Rushing Yard",
+         "namePlural": "Rushing Yards"
+        },
+        "value": {
+         "value": 51.0,
+         "formatted": "51"
+        }
+       },
+       {
+        "category": {
+         "id": 175,
+         "abbreviation": "Rec",
+         "nameSingular": "Target % Caught",
+         "namePlural": "Target % Caught"
+        },
+        "value": {
+         "value": 100.0,
+         "formatted": "2/2"
+        }
+       },
+       {
+        "category": {
+         "id": 42,
+         "abbreviation": "Yd",
+         "nameSingular": "Receiving Yard",
+         "namePlural": "Receiving Yards"
+        },
+        "value": {
+         "value": 6.0,
+         "formatted": "6"
+        }
+       },
+       {
+        "category": {
+         "id": 29,
+         "abbreviation": "TD",
+         "nameSingular": "Offensive + Special Teams TD",
+         "namePlural": "Offensive + Special Teams TDs"
+        },
+        "value": {
+         "formatted": "0"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER",
+      "rankFantasy": {
+       "ordinal": 79,
+       "positions": [
+        {
+         "position": {
+          "label": "RB",
+          "group": "START",
+          "eligibility": [
+           "RB"
+          ]
+         },
+         "ordinal": 22,
+         "formatted": "22"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 24,
+       "positions": [
+        {
+         "position": {
+          "label": "RB",
+          "group": "START",
+          "eligibility": [
+           "RB"
+          ]
+         },
+         "ordinal": 11,
+         "formatted": "RB11",
+         "rating": "RATING_GOOD"
+        }
+       ],
+       "season": 2026
+      },
+      "seasonTotal": {
+       "value": 193.89998,
+       "formatted": "193.9"
+      },
+      "seasonAverage": {
+       "value": 11.405881,
+       "formatted": "11.41"
+      }
+     }
+    },
+    {
+     "position": {
+      "label": "WR",
+      "group": "START",
+      "eligibility": [
+       "WR"
+      ],
+      "min": 4,
+      "max": 6,
+      "start": 2
+     },
+     "leaguePlayer": {
+      "proPlayer": {
+       "id": 17779,
+       "nameFull": "Puka Nacua",
+       "nameShort": "P. Nacua",
+       "proTeamAbbreviation": "LAR",
+       "position": "WR",
+       "nflByeWeek": 11,
+       "news": [
+        {
+         "timeEpochMilli": "1786491737000",
+         "contents": "Puka Nacua (groin) who left practice on Tuesday, is dealing with some mild soreness in his groin. The team is playing things safe.",
+         "analysis": "It doesn't sound like it's anything serious, but of course any injury needs to be monitored as the season approaches. Fantasy managers shouldn't fret too much, Nacua is still an elite pick in fantasy.",
+         "title": "Puka Nacua (groin) dealing with groin soreness"
+        },
+        {
+         "timeEpochMilli": "1786568706000",
+         "contents": "Los Angeles Rams wide receiver Puka Nacua (groin) left Tuesday's training camp practice early with a minor groin injury and could miss a \"few days,\" according to Adam Schefter of ESPN. The Rams have yet to even play their first preseason game this summer, so it's still very early in camp, and Nacua should be just fine for the start of the 2026 regular season in Week 1 in an international affair in Australia against the division-rival San Francisco 49ers. The Rams are going to be extra cautious ...",
+         "url": "https://www.rotoballer.com/player-news/puka-nacua-could-be-out-a-few-days-with-groin-injury/1907813",
+         "title": "Puka Nacua Could be Out a \"Few Days\" With Groin Injury"
+        }
+       ],
+       "nameFirst": "Puka",
+       "nameLast": "Nacua",
+       "percentOwnedRatio": 0.97
+      },
+      "viewingActualPoints": {
+       "value": 15.7,
+       "formatted": "15.7"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 175,
+         "abbreviation": "Rec",
+         "nameSingular": "Target % Caught",
+         "namePlural": "Target % Caught"
+        },
+        "value": {
+         "value": 50.0,
+         "formatted": "5/10"
+        }
+       },
+       {
+        "category": {
+         "id": 42,
+         "abbreviation": "Yd",
+         "nameSingular": "Receiving Yard",
+         "namePlural": "Receiving Yards"
+        },
+        "value": {
+         "value": 47.0,
+         "formatted": "47"
+        }
+       },
+       {
+        "category": {
+         "id": 26,
+         "abbreviation": "Fum",
+         "nameSingular": "Fumble",
+         "namePlural": "Fumbles",
+         "lowerIsBetter": true
+        },
+        "value": {
+         "formatted": "0"
+        }
+       },
+       {
+        "category": {
+         "id": 29,
+         "abbreviation": "TD",
+         "nameSingular": "Offensive + Special Teams TD",
+         "namePlural": "Offensive + Special Teams TDs"
+        },
+        "value": {
+         "value": 1.0,
+         "formatted": "1"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER",
+      "rankFantasy": {
+       "ordinal": 7,
+       "positions": [
+        {
+         "position": {
+          "label": "WR",
+          "group": "START",
+          "eligibility": [
+           "WR"
+          ]
+         },
+         "ordinal": 1,
+         "formatted": "1",
+         "rating": "RATING_VERY_GOOD"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 4,
+       "positions": [
+        {
+         "position": {
+          "label": "WR",
+          "group": "START",
+          "eligibility": [
+           "WR"
+          ]
+         },
+         "ordinal": 2,
+         "formatted": "WR2",
+         "rating": "RATING_VERY_GOOD"
+        }
+       ],
+       "season": 2026
+      },
+      "seasonTotal": {
+       "value": 397.0,
+       "formatted": "397"
+      },
+      "seasonAverage": {
+       "value": 24.8125,
+       "formatted": "24.81"
+      }
+     }
+    }
+   ]
+  },
+  {
+   "slots": [
+    {
+     "position": {
+      "label": "BN",
+      "max": 8
+     },
+     "leaguePlayer": {
+      "proPlayer": {
+       "id": 17167,
+       "nameFull": "Jordan Mason",
+       "nameShort": "J. Mason",
+       "proTeamAbbreviation": "MIN",
+       "position": "RB",
+       "nflByeWeek": 6,
+       "news": [
+        {
+         "timeEpochMilli": "1786588501000",
+         "contents": "Minnesota Vikings running backs Aaron Jones Sr. and Jordan Mason are listed as co-starters on the team's unofficial depth chart. Both backs split carries nearly evenly last season, with Jones averaging 11 carries per game and Mason averaging 9.9. However, the tides are turning at Vikings' training camp, with most sideline reporters saying Mason looks like the clear RB1 and that he's \"taking a leap\" in camp. The former 49ers' back averaged 4.8 yards per carry in 2025, while the former Packer ...",
+         "url": "https://www.rotoballer.com/player-news/aaron-jones-sr-and-jordan-mason-listed-as-co-starters-on-unofficial-depth-chart/1907947",
+         "title": "Aaron Jones Sr. and Jordan Mason Listed as Co-Starters on Unofficial Depth Chart"
+        }
+       ],
+       "nameFirst": "Jordan",
+       "nameLast": "Mason",
+       "percentOwnedRatio": 0.82
+      },
+      "viewingActualPoints": {
+       "formatted": "\u2014"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 22,
+         "abbreviation": "Yd",
+         "nameSingular": "Rushing Yard",
+         "namePlural": "Rushing Yards"
+        }
+       },
+       {
+        "category": {
+         "id": 175,
+         "abbreviation": "Rec",
+         "nameSingular": "Target % Caught",
+         "namePlural": "Target % Caught"
+        }
+       },
+       {
+        "category": {
+         "id": 42,
+         "abbreviation": "Yd",
+         "nameSingular": "Receiving Yard",
+         "namePlural": "Receiving Yards"
+        }
+       },
+       {
+        "category": {
+         "id": 29,
+         "abbreviation": "TD",
+         "nameSingular": "Offensive + Special Teams TD",
+         "namePlural": "Offensive + Special Teams TDs"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER",
+      "rankFantasy": {
+       "ordinal": 168,
+       "positions": [
+        {
+         "position": {
+          "label": "RB",
+          "group": "START",
+          "eligibility": [
+           "RB"
+          ]
+         },
+         "ordinal": 37,
+         "formatted": "37",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 104,
+       "positions": [
+        {
+         "position": {
+          "label": "RB",
+          "group": "START",
+          "eligibility": [
+           "RB"
+          ]
+         },
+         "ordinal": 37,
+         "formatted": "RB37",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2026
+      },
+      "seasonTotal": {
+       "value": 126.899994,
+       "formatted": "126.9"
+      },
+      "seasonAverage": {
+       "value": 7.9312496,
+       "formatted": "7.93"
+      }
+     }
+    },
+    {
+     "position": {
+      "label": "BN",
+      "max": 8
+     },
+     "leaguePlayer": {
+      "proPlayer": {
+       "id": 15555,
+       "nameFull": "J.K. Dobbins",
+       "nameShort": "J. Dobbins",
+       "proTeamAbbreviation": "DEN",
+       "position": "RB",
+       "nflByeWeek": 10,
+       "news": [
+        {
+         "timeEpochMilli": "1786569687000",
+         "contents": "J.K. Dobbins practiced for a second straight day on Wednesday.",
+         "analysis": "Dobbins is continuing to work his way through a soft tissue injury. It is unclear how much he has been doing in practice.",
+         "title": "J.K. Dobbins (soft tissue) practices again Wednesday"
+        },
+        {
+         "timeEpochMilli": "1786567745000",
+         "contents": "Denver Broncos running back J.K. Dobbins (undisclosed) was seen taking part in training camp practice again on Wednesday, according to Zac Stevens of DNVR Sports. There was some concern surrounding Dobbins when he left Monday's practice session with an undisclosed soft-tissue injury, but he was able to return to individual drills a day later on Tuesday. The 27-year-old's presence on the field for a second straight day likely means he's avoided any kind of serious injury, but he still might not ...",
+         "url": "https://www.rotoballer.com/player-news/j-k-dobbins-practices-again-on-wednesday/1907811",
+         "title": "J.K. Dobbins Practices Again on Wednesday"
+        }
+       ],
+       "nameFirst": "J.K.",
+       "nameLast": "Dobbins",
+       "percentOwnedRatio": 0.84
+      },
+      "viewingActualPoints": {
+       "formatted": "\u2014"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 22,
+         "abbreviation": "Yd",
+         "nameSingular": "Rushing Yard",
+         "namePlural": "Rushing Yards"
+        }
+       },
+       {
+        "category": {
+         "id": 175,
+         "abbreviation": "Rec",
+         "nameSingular": "Target % Caught",
+         "namePlural": "Target % Caught"
+        }
+       },
+       {
+        "category": {
+         "id": 42,
+         "abbreviation": "Yd",
+         "nameSingular": "Receiving Yard",
+         "namePlural": "Receiving Yards"
+        }
+       },
+       {
+        "category": {
+         "id": 29,
+         "abbreviation": "TD",
+         "nameSingular": "Offensive + Special Teams TD",
+         "namePlural": "Offensive + Special Teams TDs"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER",
+      "rankFantasy": {
+       "ordinal": 189,
+       "positions": [
+        {
+         "position": {
+          "label": "RB",
+          "group": "START",
+          "eligibility": [
+           "RB"
+          ]
+         },
+         "ordinal": 43,
+         "formatted": "43",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 84,
+       "positions": [
+        {
+         "position": {
+          "label": "RB",
+          "group": "START",
+          "eligibility": [
+           "RB"
+          ]
+         },
+         "ordinal": 32,
+         "formatted": "RB32",
+         "rating": "RATING_BAD"
+        }
+       ],
+       "season": 2026
+      },
+      "seasonTotal": {
+       "value": 115.9,
+       "formatted": "115.9"
+      },
+      "seasonAverage": {
+       "value": 11.59,
+       "formatted": "11.59"
+      }
+     }
+    },
+    {
+     "position": {
+      "label": "BN",
+      "max": 8
+     },
+     "leaguePlayer": {
+      "proPlayer": {
+       "id": 14767,
+       "nameFull": "Justice Hill",
+       "nameShort": "J. Hill",
+       "proTeamAbbreviation": "BAL",
+       "position": "RB",
+       "nflByeWeek": 13,
+       "nameFirst": "Justice",
+       "nameLast": "Hill",
+       "percentOwnedRatio": 0.3
+      },
+      "viewingActualPoints": {
+       "formatted": "\u2014"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 22,
+         "abbreviation": "Yd",
+         "nameSingular": "Rushing Yard",
+         "namePlural": "Rushing Yards"
+        }
+       },
+       {
+        "category": {
+         "id": 175,
+         "abbreviation": "Rec",
+         "nameSingular": "Target % Caught",
+         "namePlural": "Target % Caught"
+        }
+       },
+       {
+        "category": {
+         "id": 42,
+         "abbreviation": "Yd",
+         "nameSingular": "Receiving Yard",
+         "namePlural": "Receiving Yards"
+        }
+       },
+       {
+        "category": {
+         "id": 29,
+         "abbreviation": "TD",
+         "nameSingular": "Offensive + Special Teams TD",
+         "namePlural": "Offensive + Special Teams TDs"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER",
+      "rankFantasy": {
+       "ordinal": 270,
+       "positions": [
+        {
+         "position": {
+          "label": "RB",
+          "group": "START",
+          "eligibility": [
+           "RB"
+          ]
+         },
+         "ordinal": 60,
+         "formatted": "60",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 244,
+       "positions": [
+        {
+         "position": {
+          "label": "RB",
+          "group": "START",
+          "eligibility": [
+           "RB"
+          ]
+         },
+         "ordinal": 75,
+         "formatted": "RB75",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2026
+      },
+      "seasonTotal": {
+       "value": 66.2,
+       "formatted": "66.2"
+      },
+      "seasonAverage": {
+       "value": 6.62,
+       "formatted": "6.62"
+      }
+     }
+    },
+    {
+     "position": {
+      "label": "BN",
+      "max": 8
+     },
+     "leaguePlayer": {
+      "proPlayer": {
+       "id": 17725,
+       "nameFull": "Kayshon Boutte",
+       "nameShort": "K. Boutte",
+       "proTeamAbbreviation": "NE",
+       "position": "WR",
+       "nflByeWeek": 11,
+       "nameFirst": "Kayshon",
+       "nameLast": "Boutte",
+       "percentOwnedRatio": 0.54
+      },
+      "viewingActualPoints": {
+       "formatted": "\u2014"
+      },
+      "viewingActualStats": [
+       {
+        "category": {
+         "id": 175,
+         "abbreviation": "Rec",
+         "nameSingular": "Target % Caught",
+         "namePlural": "Target % Caught"
+        }
+       },
+       {
+        "category": {
+         "id": 42,
+         "abbreviation": "Yd",
+         "nameSingular": "Receiving Yard",
+         "namePlural": "Receiving Yards"
+        }
+       },
+       {
+        "category": {
+         "id": 26,
+         "abbreviation": "Fum",
+         "nameSingular": "Fumble",
+         "namePlural": "Fumbles",
+         "lowerIsBetter": true
+        }
+       },
+       {
+        "category": {
+         "id": 29,
+         "abbreviation": "TD",
+         "nameSingular": "Offensive + Special Teams TD",
+         "namePlural": "Offensive + Special Teams TDs"
+        }
+       }
+      ],
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER",
+      "rankFantasy": {
+       "ordinal": 173,
+       "positions": [
+        {
+         "position": {
+          "label": "WR",
+          "group": "START",
+          "eligibility": [
+           "WR"
+          ]
+         },
+         "ordinal": 51,
+         "formatted": "51",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2025
+      },
+      "rankDraft": {
+       "ordinal": 178,
+       "positions": [
+        {
+         "position": {
+          "label": "WR",
+          "group": "START",
+          "eligibility": [
+           "WR"
+          ]
+         },
+         "ordinal": 68,
+         "formatted": "WR68",
+         "rating": "RATING_VERY_BAD"
+        }
+       ],
+       "season": 2026
+      },
+      "seasonTotal": {
+       "value": 125.1,
+       "formatted": "125.1"
+      },
+      "seasonAverage": {
+       "value": 8.935714,
+       "formatted": "8.94"
+      }
+     }
+    }
+   ]
+  }
+ ],
+ "alwaysAvailablePositions": [
+  {
+   "label": "BN",
+   "max": 8
+  }
+ ],
+ "eligibleLineupPeriods": [
+  {
+   "ordinal": 1,
+   "low": {
+    "ordinal": 1,
+    "season": 2025,
+    "startEpochMilli": "1756807200000"
+   },
+   "value": 1
+  },
+  {
+   "ordinal": 2,
+   "low": {
+    "ordinal": 2,
+    "season": 2025,
+    "startEpochMilli": "1757412000000"
+   },
+   "value": 2
+  },
+  {
+   "ordinal": 3,
+   "low": {
+    "ordinal": 3,
+    "season": 2025,
+    "startEpochMilli": "1758016800000"
+   },
+   "value": 3
+  },
+  {
+   "ordinal": 4,
+   "low": {
+    "ordinal": 4,
+    "season": 2025,
+    "startEpochMilli": "1758621600000"
+   },
+   "value": 4
+  },
+  {
+   "ordinal": 5,
+   "low": {
+    "ordinal": 5,
+    "season": 2025,
+    "startEpochMilli": "1759226400000"
+   },
+   "value": 5
+  },
+  {
+   "ordinal": 6,
+   "low": {
+    "ordinal": 6,
+    "season": 2025,
+    "startEpochMilli": "1759831200000"
+   },
+   "value": 6
+  },
+  {
+   "ordinal": 7,
+   "low": {
+    "ordinal": 7,
+    "season": 2025,
+    "startEpochMilli": "1760436000000"
+   },
+   "value": 7
+  },
+  {
+   "ordinal": 8,
+   "low": {
+    "ordinal": 8,
+    "season": 2025,
+    "startEpochMilli": "1761040800000"
+   },
+   "value": 8
+  },
+  {
+   "ordinal": 9,
+   "low": {
+    "ordinal": 9,
+    "season": 2025,
+    "startEpochMilli": "1761645600000"
+   },
+   "value": 9
+  },
+  {
+   "ordinal": 10,
+   "low": {
+    "ordinal": 10,
+    "season": 2025,
+    "startEpochMilli": "1762254000000"
+   },
+   "value": 10
+  },
+  {
+   "ordinal": 11,
+   "low": {
+    "ordinal": 11,
+    "season": 2025,
+    "startEpochMilli": "1762858800000"
+   },
+   "value": 11
+  },
+  {
+   "ordinal": 12,
+   "low": {
+    "ordinal": 12,
+    "season": 2025,
+    "startEpochMilli": "1763463600000"
+   },
+   "value": 12
+  },
+  {
+   "ordinal": 13,
+   "low": {
+    "ordinal": 13,
+    "season": 2025,
+    "startEpochMilli": "1764068400000"
+   },
+   "value": 13
+  },
+  {
+   "ordinal": 14,
+   "low": {
+    "ordinal": 14,
+    "season": 2025,
+    "startEpochMilli": "1764673200000"
+   },
+   "value": 14
+  },
+  {
+   "ordinal": 15,
+   "low": {
+    "ordinal": 15,
+    "season": 2025,
+    "startEpochMilli": "1765278000000"
+   },
+   "value": 15
+  },
+  {
+   "ordinal": 16,
+   "low": {
+    "ordinal": 16,
+    "season": 2025,
+    "startEpochMilli": "1765882800000"
+   },
+   "value": 16
+  },
+  {
+   "ordinal": 17,
+   "low": {
+    "ordinal": 17,
+    "season": 2025,
+    "startEpochMilli": "1766487600000"
+   },
+   "value": 17
+  },
+  {
+   "low": {
+    "ordinal": -4,
+    "startEpochMilli": "1786442400000",
+    "isNow": true
+   },
+   "containsNow": true,
+   "value": -4
+  }
+ ],
+ "lineupPeriod": {
+  "ordinal": 17,
+  "low": {
+   "ordinal": 17,
+   "season": 2025,
+   "startEpochMilli": "1766487600000"
+  },
+  "value": 17
+ },
+ "eligibleTeams": [
+  {
+   "id": 87624,
+   "name": "Team 02",
+   "initials": "T"
+  },
+  {
+   "id": 88373,
+   "name": "Team 12",
+   "initials": "T"
+  },
+  {
+   "id": 91707,
+   "name": "Team 03",
+   "initials": "T"
+  },
+  {
+   "id": 98895,
+   "name": "Team 11",
+   "initials": "T"
+  },
+  {
+   "id": 320974,
+   "name": "Team 14",
+   "initials": "T"
+  },
+  {
+   "id": 1189441,
+   "name": "Team 09",
+   "initials": "T"
+  },
+  {
+   "id": 1255412,
+   "name": "Team 06",
+   "initials": "T"
+  },
+  {
+   "id": 1255738,
+   "name": "Team 13",
+   "initials": "T"
+  },
+  {
+   "id": 1256639,
+   "name": "Team 10",
+   "initials": "T"
+  },
+  {
+   "id": 1260133,
+   "name": "Team 07",
+   "initials": "T"
+  },
+  {
+   "id": 1273763,
+   "name": "Team 08",
+   "initials": "T"
+  },
+  {
+   "id": 1317437,
+   "name": "Team 05",
+   "initials": "T"
+  },
+  {
+   "id": 1741996,
+   "name": "Team 01",
+   "initials": "T"
+  },
+  {
+   "id": 1776540,
+   "name": "Team 04",
+   "initials": "T"
+  }
+ ]
+}

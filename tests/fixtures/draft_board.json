@@ -1,0 +1,889 @@
+{
+ "draftOrder": [
+  {
+   "id": 1741996,
+   "name": "Team 01",
+   "initials": "T"
+  },
+  {
+   "id": 87624,
+   "name": "Team 02",
+   "initials": "T"
+  },
+  {
+   "id": 91707,
+   "name": "Team 03",
+   "initials": "T"
+  },
+  {
+   "id": 1776540,
+   "name": "Team 04",
+   "initials": "T"
+  },
+  {
+   "id": 1317437,
+   "name": "Team 05",
+   "initials": "T"
+  },
+  {
+   "id": 1255412,
+   "name": "Team 06",
+   "initials": "T"
+  },
+  {
+   "id": 1260133,
+   "name": "Team 07",
+   "initials": "T"
+  },
+  {
+   "id": 1273763,
+   "name": "Team 08",
+   "initials": "T"
+  },
+  {
+   "id": 1189441,
+   "name": "Team 09",
+   "initials": "T"
+  },
+  {
+   "id": 1256639,
+   "name": "Team 10",
+   "initials": "T"
+  },
+  {
+   "id": 98895,
+   "name": "Team 11",
+   "initials": "T"
+  },
+  {
+   "id": 88373,
+   "name": "Team 12",
+   "initials": "T"
+  },
+  {
+   "id": 1255738,
+   "name": "Team 13",
+   "initials": "T"
+  },
+  {
+   "id": 320974,
+   "name": "Team 14",
+   "initials": "T"
+  }
+ ],
+ "rows": [
+  {
+   "round": 1,
+   "cells": [
+    {
+     "team": {
+      "id": 1741996,
+      "name": "Team 01",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 16250,
+       "nameFull": "Ja'Marr Chase",
+       "nameShort": "J. Chase",
+       "proTeamAbbreviation": "CIN",
+       "position": "WR",
+       "nflByeWeek": 6,
+       "nameFirst": "Ja'Marr",
+       "nameLast": "Chase",
+       "percentOwnedRatio": 0.98
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 1,
+      "overall": 1
+     },
+     "color": "DRAFT_BOARD_BLUE"
+    },
+    {
+     "team": {
+      "id": 87624,
+      "name": "Team 02",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 17603,
+       "nameFull": "Bijan Robinson",
+       "nameShort": "B. Robinson",
+       "proTeamAbbreviation": "ATL",
+       "position": "RB",
+       "nflByeWeek": 11,
+       "nameFirst": "Bijan",
+       "nameLast": "Robinson",
+       "percentOwnedRatio": 0.97
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 2,
+      "overall": 2
+     },
+     "color": "DRAFT_BOARD_GREEN"
+    },
+    {
+     "team": {
+      "id": 91707,
+      "name": "Team 03",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 13778,
+       "nameFull": "Saquon Barkley",
+       "nameShort": "S. Barkley",
+       "proTeamAbbreviation": "PHI",
+       "position": "RB",
+       "nflByeWeek": 10,
+       "nameFirst": "Saquon",
+       "nameLast": "Barkley",
+       "percentOwnedRatio": 0.98
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 3,
+      "overall": 3
+     },
+     "color": "DRAFT_BOARD_GREEN"
+    },
+    {
+     "team": {
+      "id": 1776540,
+      "name": "Team 04",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 12042,
+       "nameFull": "Derrick Henry",
+       "nameShort": "D. Henry",
+       "proTeamAbbreviation": "BAL",
+       "position": "RB",
+       "nflByeWeek": 13,
+       "nameFirst": "Derrick",
+       "nameLast": "Henry",
+       "percentOwnedRatio": 0.97
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 4,
+      "overall": 4
+     },
+     "color": "DRAFT_BOARD_GREEN"
+    },
+    {
+     "team": {
+      "id": 1317437,
+      "name": "Team 05",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 15540,
+       "nameFull": "Justin Jefferson",
+       "nameShort": "J. Jefferson",
+       "proTeamAbbreviation": "MIN",
+       "position": "WR",
+       "nflByeWeek": 6,
+       "nameFirst": "Justin",
+       "nameLast": "Jefferson",
+       "percentOwnedRatio": 0.98
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 5,
+      "overall": 5
+     },
+     "color": "DRAFT_BOARD_BLUE"
+    },
+    {
+     "team": {
+      "id": 1255412,
+      "name": "Team 06",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 17612,
+       "nameFull": "Jahmyr Gibbs",
+       "nameShort": "J. Gibbs",
+       "proTeamAbbreviation": "DET",
+       "position": "RB",
+       "nflByeWeek": 6,
+       "nameFirst": "Jahmyr",
+       "nameLast": "Gibbs",
+       "percentOwnedRatio": 0.97
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 6,
+      "overall": 6
+     },
+     "color": "DRAFT_BOARD_GREEN"
+    },
+    {
+     "team": {
+      "id": 1260133,
+      "name": "Team 07",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 15523,
+       "nameFull": "CeeDee Lamb",
+       "nameShort": "C. Lamb",
+       "proTeamAbbreviation": "DAL",
+       "position": "WR",
+       "nflByeWeek": 14,
+       "nameFirst": "CeeDee",
+       "nameLast": "Lamb",
+       "percentOwnedRatio": 0.98
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 7,
+      "overall": 7
+     },
+     "color": "DRAFT_BOARD_BLUE"
+    },
+    {
+     "team": {
+      "id": 1273763,
+      "name": "Team 08",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 13761,
+       "nameFull": "Josh Allen",
+       "nameShort": "J. Allen",
+       "proTeamAbbreviation": "BUF",
+       "position": "QB",
+       "nflByeWeek": 7,
+       "nameFirst": "Josh",
+       "nameLast": "Allen",
+       "percentOwnedRatio": 0.98
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "PASSER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 8,
+      "overall": 8
+     },
+     "color": "DRAFT_BOARD_RED"
+    },
+    {
+     "team": {
+      "id": 1189441,
+      "name": "Team 09",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 12892,
+       "nameFull": "Christian McCaffrey",
+       "nameShort": "C. McCaffrey",
+       "proTeamAbbreviation": "SF",
+       "position": "RB",
+       "nflByeWeek": 8,
+       "nameFirst": "Christian",
+       "nameLast": "McCaffrey",
+       "percentOwnedRatio": 0.98
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 9,
+      "overall": 9
+     },
+     "color": "DRAFT_BOARD_GREEN"
+    },
+    {
+     "team": {
+      "id": 1256639,
+      "name": "Team 10",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 13775,
+       "nameFull": "Lamar Jackson",
+       "nameShort": "L. Jackson",
+       "proTeamAbbreviation": "BAL",
+       "position": "QB",
+       "nflByeWeek": 13,
+       "nameFirst": "Lamar",
+       "nameLast": "Jackson",
+       "percentOwnedRatio": 0.97
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "PASSER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 10,
+      "overall": 10
+     },
+     "color": "DRAFT_BOARD_RED"
+    },
+    {
+     "team": {
+      "id": 98895,
+      "name": "Team 11",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 18372,
+       "nameFull": "Jayden Daniels",
+       "nameShort": "J. Daniels",
+       "proTeamAbbreviation": "WAS",
+       "position": "QB",
+       "nflByeWeek": 7,
+       "nameFirst": "Jayden",
+       "nameLast": "Daniels",
+       "percentOwnedRatio": 0.93
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "PASSER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 11,
+      "overall": 11
+     },
+     "color": "DRAFT_BOARD_RED"
+    },
+    {
+     "team": {
+      "id": 88373,
+      "name": "Team 12",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 15532,
+       "nameFull": "Joe Burrow",
+       "nameShort": "J. Burrow",
+       "proTeamAbbreviation": "CIN",
+       "position": "QB",
+       "nflByeWeek": 6,
+       "nameFirst": "Joe",
+       "nameLast": "Burrow",
+       "percentOwnedRatio": 0.97
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "PASSER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 12,
+      "overall": 12
+     },
+     "color": "DRAFT_BOARD_RED"
+    },
+    {
+     "team": {
+      "id": 1255738,
+      "name": "Team 13",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 16281,
+       "nameFull": "Nico Collins",
+       "nameShort": "N. Collins",
+       "proTeamAbbreviation": "HOU",
+       "position": "WR",
+       "nflByeWeek": 8,
+       "nameFirst": "Nico",
+       "nameLast": "Collins",
+       "percentOwnedRatio": 0.97
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 13,
+      "overall": 13
+     },
+     "color": "DRAFT_BOARD_BLUE"
+    },
+    {
+     "team": {
+      "id": 320974,
+      "name": "Team 14",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 18369,
+       "nameFull": "Malik Nabers",
+       "nameShort": "M. Nabers",
+       "proTeamAbbreviation": "NYG",
+       "position": "WR",
+       "nflByeWeek": 8,
+       "nameFirst": "Malik",
+       "nameLast": "Nabers",
+       "percentOwnedRatio": 0.93
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 1,
+      "slot": 14,
+      "overall": 14
+     },
+     "color": "DRAFT_BOARD_BLUE"
+    }
+   ]
+  },
+  {
+   "round": 2,
+   "cells": [
+    {
+     "team": {
+      "id": 1741996,
+      "name": "Team 01",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 17004,
+       "nameFull": "Kyren Williams",
+       "nameShort": "K. Williams",
+       "proTeamAbbreviation": "LAR",
+       "position": "RB",
+       "nflByeWeek": 11,
+       "nameFirst": "Kyren",
+       "nameLast": "Williams",
+       "percentOwnedRatio": 0.96
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 14,
+      "overall": 28
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_GREEN"
+    },
+    {
+     "team": {
+      "id": 87624,
+      "name": "Team 02",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 18364,
+       "nameFull": "Brock Bowers",
+       "nameShort": "B. Bowers",
+       "proTeamAbbreviation": "LV",
+       "position": "TE",
+       "nflByeWeek": 13,
+       "nameFirst": "Brock",
+       "nameLast": "Bowers",
+       "percentOwnedRatio": 0.97
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 13,
+      "overall": 27
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_YELLOW"
+    },
+    {
+     "team": {
+      "id": 91707,
+      "name": "Team 03",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 10252,
+       "nameFull": "Mike Evans",
+       "nameShort": "M. Evans",
+       "proTeamAbbreviation": "SF",
+       "position": "WR",
+       "nflByeWeek": 8,
+       "nameFirst": "Mike",
+       "nameLast": "Evans",
+       "percentOwnedRatio": 0.94
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 12,
+      "overall": 26
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_BLUE"
+    },
+    {
+     "team": {
+      "id": 1776540,
+      "name": "Team 04",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 18407,
+       "nameFull": "Ladd McConkey",
+       "nameShort": "L. McConkey",
+       "proTeamAbbreviation": "LAC",
+       "position": "WR",
+       "nflByeWeek": 7,
+       "nameFirst": "Ladd",
+       "nameLast": "McConkey",
+       "percentOwnedRatio": 0.94
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 11,
+      "overall": 25
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_BLUE"
+    },
+    {
+     "team": {
+      "id": 1317437,
+      "name": "Team 05",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 13023,
+       "nameFull": "George Kittle",
+       "nameShort": "G. Kittle",
+       "proTeamAbbreviation": "SF",
+       "position": "TE",
+       "nflByeWeek": 8,
+       "injury": {
+        "typeAbbreviaition": "PUP",
+        "severity": "OUT",
+        "typeFull": "Physically Unable to Perform"
+       },
+       "nameFirst": "George",
+       "nameLast": "Kittle",
+       "percentOwnedRatio": 0.95
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 10,
+      "overall": 24
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_YELLOW"
+    },
+    {
+     "team": {
+      "id": 1255412,
+      "name": "Team 06",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 14694,
+       "nameFull": "A.J. Brown",
+       "nameShort": "A. Brown",
+       "proTeamAbbreviation": "NE",
+       "position": "WR",
+       "nflByeWeek": 11,
+       "nameFirst": "A.J.",
+       "nameLast": "Brown",
+       "percentOwnedRatio": 0.97
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 9,
+      "overall": 23
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_BLUE"
+    },
+    {
+     "team": {
+      "id": 1260133,
+      "name": "Team 07",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 15604,
+       "nameFull": "Jonathan Taylor",
+       "nameShort": "J. Taylor",
+       "proTeamAbbreviation": "IND",
+       "position": "RB",
+       "nflByeWeek": 13,
+       "nameFirst": "Jonathan",
+       "nameLast": "Taylor",
+       "percentOwnedRatio": 0.98
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 8,
+      "overall": 22
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_GREEN"
+    },
+    {
+     "team": {
+      "id": 1273763,
+      "name": "Team 08",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 14673,
+       "nameFull": "Josh Jacobs",
+       "nameShort": "J. Jacobs",
+       "proTeamAbbreviation": "GB",
+       "position": "RB",
+       "nflByeWeek": 11,
+       "nameFirst": "Josh",
+       "nameLast": "Jacobs",
+       "percentOwnedRatio": 0.97
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 7,
+      "overall": 21
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_GREEN"
+    },
+    {
+     "team": {
+      "id": 1189441,
+      "name": "Team 09",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 16823,
+       "nameFull": "Drake London",
+       "nameShort": "D. London",
+       "proTeamAbbreviation": "ATL",
+       "position": "WR",
+       "nflByeWeek": 11,
+       "nameFirst": "Drake",
+       "nameLast": "London",
+       "percentOwnedRatio": 0.96
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 6,
+      "overall": 20
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_BLUE"
+    },
+    {
+     "team": {
+      "id": 1256639,
+      "name": "Team 10",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 13758,
+       "nameFull": "Baker Mayfield",
+       "nameShort": "B. Mayfield",
+       "proTeamAbbreviation": "TB",
+       "position": "QB",
+       "nflByeWeek": 10,
+       "nameFirst": "Baker",
+       "nameLast": "Mayfield",
+       "percentOwnedRatio": 0.92
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "PASSER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 5,
+      "overall": 19
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_RED"
+    },
+    {
+     "team": {
+      "id": 98895,
+      "name": "Team 11",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 16373,
+       "nameFull": "Amon-Ra St. Brown",
+       "nameShort": "A. St. Brown",
+       "proTeamAbbreviation": "DET",
+       "position": "WR",
+       "nflByeWeek": 6,
+       "nameFirst": "Amon-Ra",
+       "nameLast": "St. Brown",
+       "percentOwnedRatio": 0.98
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 4,
+      "overall": 18
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_BLUE"
+    },
+    {
+     "team": {
+      "id": 88373,
+      "name": "Team 12",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 19247,
+       "nameFull": "Ashton Jeanty",
+       "nameShort": "A. Jeanty",
+       "proTeamAbbreviation": "LV",
+       "position": "RB",
+       "nflByeWeek": 13,
+       "nameFirst": "Ashton",
+       "nameLast": "Jeanty",
+       "percentOwnedRatio": 0.96
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RUSHER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 3,
+      "overall": 17
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_GREEN"
+    },
+    {
+     "team": {
+      "id": 1255738,
+      "name": "Team 13",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 17779,
+       "nameFull": "Puka Nacua",
+       "nameShort": "P. Nacua",
+       "proTeamAbbreviation": "LAR",
+       "position": "WR",
+       "nflByeWeek": 11,
+       "nameFirst": "Puka",
+       "nameLast": "Nacua",
+       "percentOwnedRatio": 0.97
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 2,
+      "overall": 16
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_BLUE"
+    },
+    {
+     "team": {
+      "id": 320974,
+      "name": "Team 14",
+      "initials": "T"
+     },
+     "player": {
+      "proPlayer": {
+       "id": 18361,
+       "nameFull": "Brian Thomas",
+       "nameShort": "B. Thomas",
+       "proTeamAbbreviation": "JAC",
+       "position": "WR",
+       "nflByeWeek": 7,
+       "nameFirst": "Brian",
+       "nameLast": "Thomas",
+       "percentOwnedRatio": 0.91
+      },
+      "viewingFormat": "TOTAL",
+      "displayGroup": "RECEIVER"
+     },
+     "slot": {
+      "round": 2,
+      "slot": 1,
+      "overall": 15
+     },
+     "descending": true,
+     "color": "DRAFT_BOARD_BLUE"
+    }
+   ]
+  }
+ ]
+}

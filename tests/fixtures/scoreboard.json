@@ -1,0 +1,355 @@
+{
+ "schedulePeriod": {
+  "ordinal": 1,
+  "low": {
+   "ordinal": 1,
+   "season": 2025,
+   "startEpochMilli": "1756807200000"
+  },
+  "value": 1
+ },
+ "eligibleSchedulePeriods": [
+  {
+   "ordinal": 1,
+   "low": {
+    "ordinal": 1,
+    "season": 2025,
+    "startEpochMilli": "1756807200000"
+   },
+   "value": 1
+  },
+  {
+   "ordinal": 2,
+   "low": {
+    "ordinal": 2,
+    "season": 2025,
+    "startEpochMilli": "1757412000000"
+   },
+   "value": 2
+  },
+  {
+   "ordinal": 3,
+   "low": {
+    "ordinal": 3,
+    "season": 2025,
+    "startEpochMilli": "1758016800000"
+   },
+   "value": 3
+  },
+  {
+   "ordinal": 4,
+   "low": {
+    "ordinal": 4,
+    "season": 2025,
+    "startEpochMilli": "1758621600000"
+   },
+   "value": 4
+  },
+  {
+   "ordinal": 5,
+   "low": {
+    "ordinal": 5,
+    "season": 2025,
+    "startEpochMilli": "1759226400000"
+   },
+   "value": 5
+  },
+  {
+   "ordinal": 6,
+   "low": {
+    "ordinal": 6,
+    "season": 2025,
+    "startEpochMilli": "1759831200000"
+   },
+   "value": 6
+  },
+  {
+   "ordinal": 7,
+   "low": {
+    "ordinal": 7,
+    "season": 2025,
+    "startEpochMilli": "1760436000000"
+   },
+   "value": 7
+  },
+  {
+   "ordinal": 8,
+   "low": {
+    "ordinal": 8,
+    "season": 2025,
+    "startEpochMilli": "1761040800000"
+   },
+   "value": 8
+  },
+  {
+   "ordinal": 9,
+   "low": {
+    "ordinal": 9,
+    "season": 2025,
+    "startEpochMilli": "1761645600000"
+   },
+   "value": 9
+  },
+  {
+   "ordinal": 10,
+   "low": {
+    "ordinal": 10,
+    "season": 2025,
+    "startEpochMilli": "1762254000000"
+   },
+   "value": 10
+  },
+  {
+   "ordinal": 11,
+   "low": {
+    "ordinal": 11,
+    "season": 2025,
+    "startEpochMilli": "1762858800000"
+   },
+   "value": 11
+  },
+  {
+   "ordinal": 12,
+   "low": {
+    "ordinal": 12,
+    "season": 2025,
+    "startEpochMilli": "1763463600000"
+   },
+   "value": 12
+  },
+  {
+   "ordinal": 13,
+   "low": {
+    "ordinal": 13,
+    "season": 2025,
+    "startEpochMilli": "1764068400000"
+   },
+   "value": 13
+  },
+  {
+   "ordinal": 14,
+   "low": {
+    "ordinal": 14,
+    "season": 2025,
+    "startEpochMilli": "1764673200000"
+   },
+   "value": 14
+  },
+  {
+   "ordinal": 15,
+   "low": {
+    "ordinal": 15,
+    "season": 2025,
+    "startEpochMilli": "1765278000000"
+   },
+   "value": 15
+  },
+  {
+   "ordinal": 16,
+   "low": {
+    "ordinal": 16,
+    "season": 2025,
+    "startEpochMilli": "1765882800000"
+   },
+   "value": 16
+  },
+  {
+   "ordinal": 17,
+   "low": {
+    "ordinal": 17,
+    "season": 2025,
+    "startEpochMilli": "1766487600000"
+   },
+   "value": 17
+  }
+ ],
+ "games": [
+  {
+   "id": "56361068",
+   "away": {
+    "id": 88373,
+    "name": "Team 12",
+    "recordOverall": {
+     "wins": 4,
+     "losses": 9,
+     "winPercentage": {
+      "value": 0.30769232,
+      "formatted": ".308"
+     },
+     "rank": 14,
+     "formatted": "4-9"
+    },
+    "recordPostseason": {
+     "wins": 2,
+     "winPercentage": {
+      "value": 1.0,
+      "formatted": "1.000"
+     },
+     "rank": 14,
+     "formatted": "2-0"
+    },
+    "pointsFor": {
+     "value": 1287.82,
+     "formatted": "1,287.82"
+    },
+    "pointsAgainst": {
+     "value": 1649.08,
+     "formatted": "1,649.08"
+    },
+    "streak": {
+     "value": -5.0,
+     "formatted": "L5"
+    },
+    "waiverPosition": 14,
+    "draftPosition": 1,
+    "initials": "T"
+   },
+   "home": {
+    "id": 1260133,
+    "name": "Team 07",
+    "recordOverall": {
+     "wins": 9,
+     "losses": 4,
+     "winPercentage": {
+      "value": 0.6923077,
+      "formatted": ".692"
+     },
+     "rank": 5,
+     "formatted": "9-4"
+    },
+    "recordPostseason": {
+     "losses": 1,
+     "winPercentage": {
+      "formatted": ".000"
+     },
+     "rank": 3,
+     "formatted": "0-1"
+    },
+    "pointsFor": {
+     "value": 1669.3,
+     "formatted": "1,669.3"
+    },
+    "pointsAgainst": {
+     "value": 1478.42,
+     "formatted": "1,478.42"
+    },
+    "streak": {
+     "value": 1.0,
+     "formatted": "W1"
+    },
+    "waiverPosition": 5,
+    "draftPosition": 10,
+    "initials": "T"
+   },
+   "awayScore": {
+    "score": {
+     "value": 132.14,
+     "formatted": "132.14"
+    }
+   },
+   "homeScore": {
+    "score": {
+     "value": 123.4,
+     "formatted": "123.4"
+    }
+   },
+   "homeResult": "LOSE",
+   "awayResult": "WIN",
+   "isFinalScore": true
+  },
+  {
+   "id": "56361066",
+   "away": {
+    "id": 91707,
+    "name": "Team 03",
+    "recordOverall": {
+     "wins": 4,
+     "losses": 9,
+     "winPercentage": {
+      "value": 0.30769232,
+      "formatted": ".308"
+     },
+     "rank": 11,
+     "formatted": "4-9"
+    },
+    "recordPostseason": {
+     "wins": 1,
+     "losses": 1,
+     "winPercentage": {
+      "value": 0.5,
+      "formatted": ".500"
+     },
+     "rank": 11,
+     "formatted": "1-1"
+    },
+    "pointsFor": {
+     "value": 1482.96,
+     "formatted": "1,482.96"
+    },
+    "pointsAgainst": {
+     "value": 1602.78,
+     "formatted": "1,602.78"
+    },
+    "streak": {
+     "value": 1.0,
+     "formatted": "W1"
+    },
+    "waiverPosition": 11,
+    "draftPosition": 4,
+    "initials": "T"
+   },
+   "home": {
+    "id": 87624,
+    "name": "Team 02",
+    "recordOverall": {
+     "wins": 7,
+     "losses": 6,
+     "winPercentage": {
+      "value": 0.53846157,
+      "formatted": ".538"
+     },
+     "rank": 7,
+     "formatted": "7-6"
+    },
+    "recordPostseason": {
+     "losses": 1,
+     "winPercentage": {
+      "formatted": ".000"
+     },
+     "rank": 7,
+     "formatted": "0-1"
+    },
+    "pointsFor": {
+     "value": 1586.92,
+     "formatted": "1,586.92"
+    },
+    "pointsAgainst": {
+     "value": 1526.64,
+     "formatted": "1,526.64"
+    },
+    "streak": {
+     "value": 3.0,
+     "formatted": "W3"
+    },
+    "waiverPosition": 7,
+    "draftPosition": 8,
+    "initials": "T"
+   },
+   "awayScore": {
+    "score": {
+     "value": 95.12,
+     "formatted": "95.12"
+    }
+   },
+   "homeScore": {
+    "score": {
+     "value": 124.84,
+     "formatted": "124.84"
+    }
+   },
+   "homeResult": "WIN",
+   "awayResult": "LOSE",
+   "isFinalScore": true
+  }
+ ]
+}

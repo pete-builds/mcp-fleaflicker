@@ -1,0 +1,30 @@
+x-logging: &default-logging
+  driver: json-file
+  options:
+    max-size: "10m"
+    max-file: "3"
+
+services:
+  mcp-fleaflicker:
+    build: .
+    image: mcp-fleaflicker:0.1.0
+    container_name: mcp-fleaflicker
+    restart: unless-stopped
+    ports:
+      - "3727:3727"
+    env_file: .env
+    logging: *default-logging
+    # The server writes nothing to disk: no database, no credential store, no
+    # cache. A read-only rootfs costs nothing here and removes a whole class of
+    # tampering. /tmp is tmpfs because Python wants a scratch dir.
+    read_only: true
+    tmpfs:
+      - /tmp
+    security_opt:
+      - no-new-privileges:true
+    healthcheck:
+      test: ["CMD", "python", "healthcheck.py"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s

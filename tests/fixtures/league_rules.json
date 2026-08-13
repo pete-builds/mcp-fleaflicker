@@ -1,0 +1,1378 @@
+{
+ "rosterPositions": [
+  {
+   "label": "QB",
+   "group": "START",
+   "eligibility": [
+    "QB"
+   ],
+   "min": 1,
+   "max": 2,
+   "start": 1
+  },
+  {
+   "label": "RB",
+   "group": "START",
+   "eligibility": [
+    "RB"
+   ],
+   "min": 3,
+   "max": 5,
+   "start": 1
+  },
+  {
+   "label": "WR",
+   "group": "START",
+   "eligibility": [
+    "WR"
+   ],
+   "min": 4,
+   "max": 6,
+   "start": 2
+  },
+  {
+   "label": "TE",
+   "group": "START",
+   "eligibility": [
+    "TE"
+   ],
+   "min": 1,
+   "max": 3,
+   "start": 1
+  },
+  {
+   "label": "RB/WR/TE",
+   "group": "START",
+   "eligibility": [
+    "RB",
+    "WR",
+    "TE"
+   ],
+   "start": 1
+  },
+  {
+   "label": "QB/RB/WR/TE",
+   "group": "START",
+   "eligibility": [
+    "QB",
+    "RB",
+    "WR",
+    "TE"
+   ],
+   "start": 1
+  },
+  {
+   "label": "D/ST",
+   "group": "START",
+   "eligibility": [
+    "D/ST"
+   ],
+   "min": 1,
+   "max": 2,
+   "start": 1
+  },
+  {
+   "label": "BN",
+   "max": 7
+  },
+  {
+   "label": "K",
+   "group": "START",
+   "eligibility": [
+    "K"
+   ],
+   "max": 1
+  },
+  {
+   "label": "P",
+   "group": "START",
+   "eligibility": [
+    "P"
+   ],
+   "max": 1
+  },
+  {
+   "label": "CB",
+   "group": "START",
+   "eligibility": [
+    "CB"
+   ],
+   "max": 1
+  },
+  {
+   "label": "S",
+   "group": "START",
+   "eligibility": [
+    "S"
+   ],
+   "max": 1
+  },
+  {
+   "label": "EDR",
+   "group": "START",
+   "eligibility": [
+    "EDR"
+   ],
+   "max": 1
+  },
+  {
+   "label": "IL",
+   "group": "START",
+   "eligibility": [
+    "IL"
+   ],
+   "max": 1
+  },
+  {
+   "label": "LB",
+   "group": "START",
+   "eligibility": [
+    "LB"
+   ],
+   "max": 1
+  },
+  {
+   "label": "IR",
+   "group": "INJURED",
+   "eligibility": [
+    "QB",
+    "RB",
+    "WR",
+    "TE",
+    "K",
+    "P",
+    "D/ST",
+    "CB",
+    "S",
+    "EDR",
+    "DE",
+    "IL",
+    "DT",
+    "LB",
+    "LB"
+   ]
+  },
+  {
+   "label": "TAXI",
+   "group": "TAXI",
+   "eligibility": [
+    "QB",
+    "RB",
+    "WR",
+    "TE",
+    "K",
+    "P",
+    "D/ST",
+    "CB",
+    "S",
+    "EDR",
+    "DE",
+    "IL",
+    "DT",
+    "LB",
+    "LB"
+   ]
+  }
+ ],
+ "groups": [
+  {
+   "label": "Passing",
+   "scoringRules": [
+    {
+     "category": {
+      "id": 2,
+      "abbreviation": "Cmp",
+      "nameSingular": "Passing Completion",
+      "namePlural": "Passing Completions"
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "boundLower": 25,
+     "description": "2 extra points when total Passing Completions is greater than or equal to 25",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points when total ${categoryPlural} is greater than or equal to ${boundLower}",
+     "rangeType": "RANGE_LOWER_BOUND"
+    },
+    {
+     "category": {
+      "id": 3,
+      "abbreviation": "Yd",
+      "nameSingular": "Passing Yard",
+      "namePlural": "Passing Yards"
+     },
+     "points": {
+      "value": 1.0,
+      "formatted": "1"
+     },
+     "forEvery": 25,
+     "description": "1 point for every 25 Passing Yards (0.04 per)",
+     "pointsPer": {
+      "value": 0.04,
+      "formatted": "0.04"
+     },
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} point for every ${forEvery} ${categoryPlural} (${pointsPer} per)"
+    },
+    {
+     "category": {
+      "id": 3,
+      "abbreviation": "Yd",
+      "nameSingular": "Passing Yard",
+      "namePlural": "Passing Yards"
+     },
+     "points": {
+      "value": 1.0,
+      "formatted": "1"
+     },
+     "boundLower": 300,
+     "description": "1 extra point when total Passing Yards is greater than or equal to 300",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra point when total ${categoryPlural} is greater than or equal to ${boundLower}",
+     "rangeType": "RANGE_LOWER_BOUND"
+    },
+    {
+     "category": {
+      "id": 5,
+      "abbreviation": "TD",
+      "nameSingular": "Passing TD",
+      "namePlural": "Passing TDs"
+     },
+     "points": {
+      "value": 6.0,
+      "formatted": "6"
+     },
+     "forEvery": 1,
+     "description": "6 points for every Passing TD",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 6,
+      "abbreviation": "TY",
+      "nameSingular": "Passing TD",
+      "namePlural": "Passing TDs",
+      "multiValue": true
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "boundLower": 40,
+     "boundUpper": 79,
+     "description": "2 extra points for every Passing TD between 40 and 79 yards (inclusive)",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points for every ${categorySingular} between ${boundLower} and ${boundUpper} yards (inclusive)",
+     "rangeType": "RANGE_DOUBLE_BOUND"
+    },
+    {
+     "category": {
+      "id": 6,
+      "abbreviation": "TY",
+      "nameSingular": "Passing TD",
+      "namePlural": "Passing TDs",
+      "multiValue": true
+     },
+     "points": {
+      "value": 4.0,
+      "formatted": "4"
+     },
+     "boundLower": 80,
+     "description": "4 extra points for every Passing TD of 80 or more yards",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points for every ${categorySingular} of ${boundLower} or more yards",
+     "rangeType": "RANGE_LOWER_BOUND"
+    },
+    {
+     "category": {
+      "id": 4,
+      "abbreviation": "2PC",
+      "nameSingular": "2 Pt Conversion Passing",
+      "namePlural": "2 Pt Conversions Passing"
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "forEvery": 1,
+     "description": "2 points for every 2 Pt Conversion Passing",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 7,
+      "abbreviation": "INT",
+      "nameSingular": "Interception",
+      "namePlural": "Interceptions",
+      "lowerIsBetter": true
+     },
+     "points": {
+      "value": -2.0,
+      "formatted": "-2"
+     },
+     "forEvery": 1,
+     "description": "-2 points for every Interception",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    }
+   ]
+  },
+  {
+   "label": "Rushing",
+   "scoringRules": [
+    {
+     "category": {
+      "id": 21,
+      "abbreviation": "Att",
+      "nameSingular": "Rushing Attempt",
+      "namePlural": "Rushing Attempts"
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "boundLower": 30,
+     "description": "2 extra points when total Rushing Attempts is greater than or equal to 30",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points when total ${categoryPlural} is greater than or equal to ${boundLower}",
+     "rangeType": "RANGE_LOWER_BOUND"
+    },
+    {
+     "category": {
+      "id": 22,
+      "abbreviation": "Yd",
+      "nameSingular": "Rushing Yard",
+      "namePlural": "Rushing Yards"
+     },
+     "points": {
+      "value": 1.0,
+      "formatted": "1"
+     },
+     "forEvery": 10,
+     "description": "1 point for every 10 Rushing Yards (0.1 per)",
+     "pointsPer": {
+      "value": 0.1,
+      "formatted": "0.1"
+     },
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} point for every ${forEvery} ${categoryPlural} (${pointsPer} per)"
+    },
+    {
+     "category": {
+      "id": 22,
+      "abbreviation": "Yd",
+      "nameSingular": "Rushing Yard",
+      "namePlural": "Rushing Yards"
+     },
+     "points": {
+      "value": 1.0,
+      "formatted": "1"
+     },
+     "boundLower": 150,
+     "description": "1 extra point when total Rushing Yards is greater than or equal to 150",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra point when total ${categoryPlural} is greater than or equal to ${boundLower}",
+     "rangeType": "RANGE_LOWER_BOUND"
+    },
+    {
+     "category": {
+      "id": 23,
+      "abbreviation": "2PC",
+      "nameSingular": "2 Pt Conversion Rushing",
+      "namePlural": "2 Pt Conversions Rushing"
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "forEvery": 1,
+     "description": "2 points for every 2 Pt Conversion Rushing",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 24,
+      "abbreviation": "TD",
+      "nameSingular": "Rushing TD",
+      "namePlural": "Rushing TDs"
+     },
+     "points": {
+      "value": 6.0,
+      "formatted": "6"
+     },
+     "forEvery": 1,
+     "description": "6 points for every Rushing TD",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 25,
+      "abbreviation": "TY",
+      "nameSingular": "Rushing TD",
+      "namePlural": "Rushing TDs",
+      "multiValue": true
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "boundLower": 40,
+     "boundUpper": 79,
+     "description": "2 extra points for every Rushing TD between 40 and 79 yards (inclusive)",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points for every ${categorySingular} between ${boundLower} and ${boundUpper} yards (inclusive)",
+     "rangeType": "RANGE_DOUBLE_BOUND"
+    },
+    {
+     "category": {
+      "id": 25,
+      "abbreviation": "TY",
+      "nameSingular": "Rushing TD",
+      "namePlural": "Rushing TDs",
+      "multiValue": true
+     },
+     "points": {
+      "value": 4.0,
+      "formatted": "4"
+     },
+     "boundLower": 80,
+     "description": "4 extra points for every Rushing TD of 80 or more yards",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points for every ${categorySingular} of ${boundLower} or more yards",
+     "rangeType": "RANGE_LOWER_BOUND"
+    }
+   ]
+  },
+  {
+   "label": "Receiving",
+   "scoringRules": [
+    {
+     "category": {
+      "id": 41,
+      "abbreviation": "Rec",
+      "nameSingular": "Catch",
+      "namePlural": "Catches"
+     },
+     "points": {
+      "value": 1.0,
+      "formatted": "1"
+     },
+     "forEvery": 1,
+     "description": "1 point for every Catch",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "template": "${points} point for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 41,
+      "abbreviation": "Rec",
+      "nameSingular": "Catch",
+      "namePlural": "Catches"
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "boundLower": 9,
+     "description": "2 extra points when total Catches is greater than or equal to 9",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points when total ${categoryPlural} is greater than or equal to ${boundLower}",
+     "rangeType": "RANGE_LOWER_BOUND"
+    },
+    {
+     "category": {
+      "id": 42,
+      "abbreviation": "Yd",
+      "nameSingular": "Receiving Yard",
+      "namePlural": "Receiving Yards"
+     },
+     "points": {
+      "value": 1.0,
+      "formatted": "1"
+     },
+     "forEvery": 10,
+     "description": "1 point for every 10 Receiving Yards (0.1 per)",
+     "pointsPer": {
+      "value": 0.1,
+      "formatted": "0.1"
+     },
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} point for every ${forEvery} ${categoryPlural} (${pointsPer} per)"
+    },
+    {
+     "category": {
+      "id": 42,
+      "abbreviation": "Yd",
+      "nameSingular": "Receiving Yard",
+      "namePlural": "Receiving Yards"
+     },
+     "points": {
+      "value": 1.0,
+      "formatted": "1"
+     },
+     "boundLower": 150,
+     "description": "1 extra point when total Receiving Yards is greater than or equal to 150",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra point when total ${categoryPlural} is greater than or equal to ${boundLower}",
+     "rangeType": "RANGE_LOWER_BOUND"
+    },
+    {
+     "category": {
+      "id": 43,
+      "abbreviation": "2PC",
+      "nameSingular": "2 Pt Conversion Receiving",
+      "namePlural": "2 Pt Conversions Receiving"
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "forEvery": 1,
+     "description": "2 points for every 2 Pt Conversion Receiving",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 44,
+      "abbreviation": "TD",
+      "nameSingular": "Receiving TD",
+      "namePlural": "Receiving TDs"
+     },
+     "points": {
+      "value": 6.0,
+      "formatted": "6"
+     },
+     "forEvery": 1,
+     "description": "6 points for every Receiving TD",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 45,
+      "abbreviation": "TY",
+      "nameSingular": "Receiving TD",
+      "namePlural": "Receiving TDs",
+      "multiValue": true
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "boundLower": 40,
+     "boundUpper": 79,
+     "description": "2 extra points for every Receiving TD between 40 and 79 yards (inclusive)",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points for every ${categorySingular} between ${boundLower} and ${boundUpper} yards (inclusive)",
+     "rangeType": "RANGE_DOUBLE_BOUND"
+    },
+    {
+     "category": {
+      "id": 45,
+      "abbreviation": "TY",
+      "nameSingular": "Receiving TD",
+      "namePlural": "Receiving TDs",
+      "multiValue": true
+     },
+     "points": {
+      "value": 4.0,
+      "formatted": "4"
+     },
+     "boundLower": 80,
+     "description": "4 extra points for every Receiving TD of 80 or more yards",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points for every ${categorySingular} of ${boundLower} or more yards",
+     "rangeType": "RANGE_LOWER_BOUND"
+    }
+   ]
+  },
+  {
+   "label": "Misc",
+   "scoringRules": [
+    {
+     "category": {
+      "id": 26,
+      "abbreviation": "Fum",
+      "nameSingular": "Fumble",
+      "namePlural": "Fumbles",
+      "lowerIsBetter": true
+     },
+     "points": {
+      "value": -1.0,
+      "formatted": "-1"
+     },
+     "forEvery": 1,
+     "description": "-1 point for every Fumble",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} point for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 27,
+      "abbreviation": "Lost",
+      "nameSingular": "Fumble Lost",
+      "namePlural": "Fumbles Lost",
+      "lowerIsBetter": true
+     },
+     "points": {
+      "value": -1.0,
+      "formatted": "-1"
+     },
+     "forEvery": 1,
+     "description": "-1 point for every Fumble Lost",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} point for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 118,
+      "abbreviation": "TD",
+      "nameSingular": "Offensive Fumble Recovery TD",
+      "namePlural": "Offensive Fumble Recovery TDs"
+     },
+     "points": {
+      "value": 6.0,
+      "formatted": "6"
+     },
+     "forEvery": 1,
+     "description": "6 points for every Offensive Fumble Recovery TD",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 119,
+      "abbreviation": "ROTY",
+      "nameSingular": "Offensive Fumble Recovery TD",
+      "namePlural": "Offensive Fumble Recovery TDs",
+      "multiValue": true
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "boundLower": 40,
+     "boundUpper": 79,
+     "description": "2 extra points for every Offensive Fumble Recovery TD between 40 and 79 yards (inclusive)",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points for every ${categorySingular} between ${boundLower} and ${boundUpper} yards (inclusive)",
+     "rangeType": "RANGE_DOUBLE_BOUND"
+    },
+    {
+     "category": {
+      "id": 119,
+      "abbreviation": "ROTY",
+      "nameSingular": "Offensive Fumble Recovery TD",
+      "namePlural": "Offensive Fumble Recovery TDs",
+      "multiValue": true
+     },
+     "points": {
+      "value": 4.0,
+      "formatted": "4"
+     },
+     "boundLower": 80,
+     "description": "4 extra points for every Offensive Fumble Recovery TD of 80 or more yards",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points for every ${categorySingular} of ${boundLower} or more yards",
+     "rangeType": "RANGE_LOWER_BOUND"
+    }
+   ]
+  },
+  {
+   "label": "Kicking",
+   "scoringRules": [
+    {
+     "category": {
+      "id": 101,
+      "abbreviation": "FG",
+      "nameSingular": "Field Goal Made",
+      "namePlural": "Field Goals Made"
+     },
+     "points": {
+      "value": 3.0,
+      "formatted": "3"
+     },
+     "forEvery": 1,
+     "description": "3 points for every Field Goal Made",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 102,
+      "abbreviation": "FY",
+      "nameSingular": "Field Goal Made",
+      "namePlural": "Field Goals Made",
+      "multiValue": true
+     },
+     "points": {
+      "value": 1.0,
+      "formatted": "1"
+     },
+     "boundLower": 40,
+     "boundUpper": 49,
+     "description": "1 extra point for every Field Goal Made between 40 and 49 yards (inclusive)",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra point for every ${categorySingular} between ${boundLower} and ${boundUpper} yards (inclusive)",
+     "rangeType": "RANGE_DOUBLE_BOUND"
+    },
+    {
+     "category": {
+      "id": 102,
+      "abbreviation": "FY",
+      "nameSingular": "Field Goal Made",
+      "namePlural": "Field Goals Made",
+      "multiValue": true
+     },
+     "points": {
+      "value": 3.0,
+      "formatted": "3"
+     },
+     "boundLower": 50,
+     "description": "3 extra points for every Field Goal Made of 50 or more yards",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points for every ${categorySingular} of ${boundLower} or more yards",
+     "rangeType": "RANGE_LOWER_BOUND"
+    },
+    {
+     "category": {
+      "id": 104,
+      "abbreviation": "XP",
+      "nameSingular": "XP",
+      "namePlural": "XPs"
+     },
+     "points": {
+      "value": 1.0,
+      "formatted": "1"
+     },
+     "forEvery": 1,
+     "description": "1 point for every XP",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "applyToAll": true,
+     "template": "${points} point for every ${categorySingular}"
+    }
+   ]
+  },
+  {
+   "label": "Returning",
+   "scoringRules": [
+    {
+     "category": {
+      "id": 63,
+      "abbreviation": "TD",
+      "nameSingular": "Kick Return TD",
+      "namePlural": "Kick Return TDs"
+     },
+     "points": {
+      "value": 6.0,
+      "formatted": "6"
+     },
+     "forEvery": 1,
+     "description": "6 points for every Kick Return TD",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE",
+      "D/ST"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 67,
+      "abbreviation": "TD",
+      "nameSingular": "Punt Return TD",
+      "namePlural": "Punt Return TDs"
+     },
+     "points": {
+      "value": 6.0,
+      "formatted": "6"
+     },
+     "forEvery": 1,
+     "description": "6 points for every Punt Return TD",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE",
+      "D/ST"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    }
+   ]
+  },
+  {
+   "label": "Defense",
+   "scoringRules": [
+    {
+     "category": {
+      "id": 83,
+      "abbreviation": "Solo",
+      "nameSingular": "Solo Tackle",
+      "namePlural": "Solo Tackles"
+     },
+     "points": {
+      "value": 1.0,
+      "formatted": "1"
+     },
+     "forEvery": 1,
+     "description": "1 point for every Solo Tackle",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "template": "${points} point for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 83,
+      "abbreviation": "Solo",
+      "nameSingular": "Solo Tackle",
+      "namePlural": "Solo Tackles"
+     },
+     "points": {
+      "value": 1.0,
+      "formatted": "1"
+     },
+     "boundLower": 15,
+     "description": "1 extra point when total Solo Tackles is greater than or equal to 15",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE"
+     ],
+     "isBonus": true,
+     "template": "${points} extra point when total ${categoryPlural} is greater than or equal to ${boundLower}",
+     "rangeType": "RANGE_LOWER_BOUND"
+    },
+    {
+     "category": {
+      "id": 84,
+      "abbreviation": "INT",
+      "nameSingular": "Interception",
+      "namePlural": "Interceptions"
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "forEvery": 1,
+     "description": "2 points for every Interception",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE",
+      "D/ST"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 85,
+      "abbreviation": "Sack",
+      "nameSingular": "Sack",
+      "namePlural": "Sacks"
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "forEvery": 1,
+     "description": "2 points for every Sack",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE",
+      "D/ST"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 86,
+      "abbreviation": "FF",
+      "nameSingular": "Fumble Forced",
+      "namePlural": "Fumbles Forced"
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "forEvery": 1,
+     "description": "2 points for every Fumble Forced",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE",
+      "D/ST"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 87,
+      "abbreviation": "FR",
+      "nameSingular": "Fumble Recovered",
+      "namePlural": "Fumbles Recovered"
+     },
+     "points": {
+      "value": 1.0,
+      "formatted": "1"
+     },
+     "forEvery": 1,
+     "description": "1 point for every Fumble Recovered",
+     "applyTo": [
+      "D/ST"
+     ],
+     "template": "${points} point for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 88,
+      "abbreviation": "Saf",
+      "nameSingular": "Safety",
+      "namePlural": "Safeties"
+     },
+     "points": {
+      "value": 4.0,
+      "formatted": "4"
+     },
+     "forEvery": 1,
+     "description": "4 points for every Safety",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE",
+      "D/ST"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 89,
+      "abbreviation": "TD",
+      "nameSingular": "Defensive TD",
+      "namePlural": "Defensive TDs"
+     },
+     "points": {
+      "value": 6.0,
+      "formatted": "6"
+     },
+     "forEvery": 1,
+     "description": "6 points for every Defensive TD",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE",
+      "D/ST"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 90,
+      "abbreviation": "TY",
+      "nameSingular": "Defensive TD",
+      "namePlural": "Defensive TDs",
+      "multiValue": true
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "boundLower": 40,
+     "boundUpper": 79,
+     "description": "2 extra points for every Defensive TD between 40 and 79 yards (inclusive)",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE",
+      "D/ST"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points for every ${categorySingular} between ${boundLower} and ${boundUpper} yards (inclusive)",
+     "rangeType": "RANGE_DOUBLE_BOUND"
+    },
+    {
+     "category": {
+      "id": 90,
+      "abbreviation": "TY",
+      "nameSingular": "Defensive TD",
+      "namePlural": "Defensive TDs",
+      "multiValue": true
+     },
+     "points": {
+      "value": 4.0,
+      "formatted": "4"
+     },
+     "boundLower": 80,
+     "description": "4 extra points for every Defensive TD of 80 or more yards",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE",
+      "D/ST"
+     ],
+     "applyToAll": true,
+     "isBonus": true,
+     "template": "${points} extra points for every ${categorySingular} of ${boundLower} or more yards",
+     "rangeType": "RANGE_LOWER_BOUND"
+    },
+    {
+     "category": {
+      "id": 125,
+      "abbreviation": "CR",
+      "nameSingular": "Conversion Return",
+      "namePlural": "Conversion Returns"
+     },
+     "points": {
+      "value": 2.0,
+      "formatted": "2"
+     },
+     "forEvery": 1,
+     "description": "2 points for every Conversion Return",
+     "applyTo": [
+      "QB",
+      "RB",
+      "WR",
+      "TE",
+      "D/ST"
+     ],
+     "applyToAll": true,
+     "template": "${points} points for every ${categorySingular}"
+    },
+    {
+     "category": {
+      "id": 94,
+      "abbreviation": "Pts",
+      "nameSingular": "Point Allowed",
+      "namePlural": "Points Allowed",
+      "lowerIsBetter": true
+     },
+     "points": {
+      "value": 10.0,
+      "formatted": "10"
+     },
+     "description": "10 extra points when total Points Allowed is exactly 0",
+     "applyTo": [
+      "D/ST"
+     ],
+     "isBonus": true,
+     "template": "${points} extra points when total ${categoryPlural} is exactly ${boundLower}",
+     "rangeType": "RANGE_DOUBLE_BOUND"
+    }
+   ]
+  },
+  {
+   "label": "Punting"
+  }
+ ],
+ "numStarters": 8,
+ "numBench": 7,
+ "maxActive": 15,
+ "maxRosterSize": 15,
+ "allScoringRuleTypes": [
+  {
+   "template": "${points} points for every ${forEvery} ${categoryPlural}"
+  },
+  {
+   "hasLowerBound": true,
+   "template": "${points} points for every ${forEvery} ${categoryPlural} after reaching ${boundLower} total ${categoryPlural}"
+  },
+  {
+   "hasUpperBound": true,
+   "template": "${points} points for every ${forEvery} ${categoryPlural} for the first ${boundUpper} total ${categoryPlural}"
+  },
+  {
+   "hasLowerBound": true,
+   "hasUpperBound": true,
+   "template": "${points} points for every ${forEvery} ${categoryPlural} between ${boundLower} and ${boundUpper} total ${categoryPlural} (inclusive)"
+  },
+  {
+   "isBonus": true,
+   "hasLowerBound": true,
+   "template": "${points} extra points when total ${categoryPlural} is greater than or equal to ${boundLower}"
+  },
+  {
+   "isBonus": true,
+   "hasUpperBound": true,
+   "template": "${points} extra points when total ${categoryPlural} is less than or equal to ${boundUpper}"
+  },
+  {
+   "isBonus": true,
+   "hasLowerBound": true,
+   "hasUpperBound": true,
+   "template": "${points} extra points when total ${categoryPlural} is between ${boundLower} and ${boundUpper} (inclusive)"
+  },
+  {
+   "isMultiValue": true,
+   "template": "${points} points for every ${forEvery} yards covered by a ${categorySingular}"
+  },
+  {
+   "hasLowerBound": true,
+   "isMultiValue": true,
+   "template": "${points} points for every ${forEvery} yards covered by a ${categorySingular} after yard ${boundLower}"
+  },
+  {
+   "hasUpperBound": true,
+   "isMultiValue": true,
+   "template": "${points} points for every ${forEvery} yards covered by a ${categorySingular} up to yard ${boundUpper}"
+  },
+  {
+   "hasLowerBound": true,
+   "hasUpperBound": true,
+   "isMultiValue": true,
+   "template": "${points} points for every ${forEvery} yards covered by a ${categorySingular} between yards ${boundLower} and ${boundUpper} (inclusive)"
+  },
+  {
+   "isBonus": true,
+   "hasLowerBound": true,
+   "isMultiValue": true,
+   "template": "${points} extra points for every ${categorySingular} of ${boundLower} or more yards"
+  },
+  {
+   "isBonus": true,
+   "hasUpperBound": true,
+   "isMultiValue": true,
+   "template": "${points} extra points for every ${categorySingular} of ${boundUpper} or less yards"
+  },
+  {
+   "isBonus": true,
+   "hasLowerBound": true,
+   "hasUpperBound": true,
+   "isMultiValue": true,
+   "template": "${points} extra points for every ${categorySingular} between ${boundLower} and ${boundUpper} yards (inclusive)"
+  }
+ ]
+}
