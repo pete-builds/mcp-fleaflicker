@@ -41,10 +41,17 @@ jobs:
       - name: Lockfile is in sync with requirements.in
         run: |
           pip install uv
-          uv pip compile requirements.in -o /tmp/check.lock \
-            --generate-hashes --universal --python-version 3.13 --quiet
-          diff -u requirements.lock /tmp/check.lock \
-            || (echo "::error::requirements.lock is stale; regenerate it" && exit 1)
+          # Recompile under the SAME output filename in a scratch directory.
+          # uv records the -o path in the file's header comment, so compiling
+          # to a different name guarantees a one-line diff and a check that can
+          # never pass.
+          mkdir -p /tmp/lockcheck
+          cp requirements.in /tmp/lockcheck/
+          (cd /tmp/lockcheck && uv pip compile requirements.in -o requirements.lock \
+            --generate-hashes --universal --python-version 3.13 --quiet)
+          diff -u requirements.lock /tmp/lockcheck/requirements.lock \
+            || (echo "::error::requirements.lock is stale; regenerate it with:
+          uv pip compile requirements.in -o requirements.lock --generate-hashes --universal --python-version 3.13" && exit 1)
 
   scan:
     name: Trivy filesystem scan
