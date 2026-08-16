@@ -57,7 +57,7 @@ jobs:
             --generate-hashes --universal --python-version 3.13 --quiet)
           diff -u requirements.lock /tmp/lockcheck/requirements.lock \
             || (echo "::error::requirements.lock is stale; regenerate it with:
-          uv pip compile requirements.in -o requirements.lock --generate-hashes --universal --python-version 3.13" && exit 1)
+          uv pip compile requirements.in -o requirements.lock --upgrade --generate-hashes --universal --python-version 3.13" && exit 1)
 
   scan:
     name: Trivy filesystem scan
