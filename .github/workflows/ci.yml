@@ -40,7 +40,7 @@ jobs:
 
       - name: Lockfile is in sync with requirements.in
         run: |
-          pip install uv
+          pip install uv==0.12.5
           # Regenerate the lock on LINUX. `--universal` is not fully host
           # independent: on 2026-08-16 the same uv 0.11.8 resolved
           # platformdirs 4.11.2 on macOS and 4.11.3 on linux, so a lock
