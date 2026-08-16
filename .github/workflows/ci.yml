@@ -91,3 +91,36 @@ jobs:
           # image builds, so it does not set `load` and nothing is exported.
           sbom: true
           provenance: true
+
+      # A second, attestation-free pass so the image is actually loadable into
+      # the docker daemon. Every layer is a cache hit off the build above.
+      - name: Load a runnable copy for the interpreter guard
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          push: false
+          load: true
+          tags: mcp-fleaflicker:guard
+
+      - name: Assert the image ships the Python minor version we target
+        # Guard rail for the digest-bump trap. Every other job in this workflow
+        # runs on actions/setup-python 3.13, so nothing here ever executes the
+        # *image's* interpreter. That let a Dependabot base-image bump move the
+        # Dockerfile FROM tag from 3.13 to 3.14 on sister repos and ship a
+        # runtime no lockfile or check had exercised, with CI fully green.
+        #
+        # requirements.lock is compiled with --python-version 3.13, so the image
+        # must agree. --entrypoint is required: the image's ENTRYPOINT is the
+        # server itself.
+        run: |
+          docker run --rm --entrypoint python mcp-fleaflicker:guard -c '
+          import sys
+          want = (3, 13)
+          got = sys.version_info[:2]
+          assert got == want, (
+              f"image ships Python {sys.version.split()[0]}, but requirements.lock "
+              f"and the CI matrix target {want[0]}.{want[1]}. Fix the Dockerfile "
+              f"FROM tag, or retarget every version surface together."
+          )
+          print(f"image Python {sys.version.split()[0]} matches target {want[0]}.{want[1]}")
+          '
