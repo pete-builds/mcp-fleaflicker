@@ -11,7 +11,7 @@ jobs:
     name: Lint + tests
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - uses: actions/setup-python@v6
         with:
@@ -40,7 +40,7 @@ jobs:
 
       - name: Lockfile is in sync with requirements.in
         run: |
-          pip install uv
+          pip install uv==0.12.5
           # Regenerate the lock on LINUX. `--universal` is not fully host
           # independent: on 2026-08-16 the same uv 0.11.8 resolved
           # platformdirs 4.11.2 on macOS and 4.11.3 on linux, so a lock
@@ -57,13 +57,13 @@ jobs:
             --generate-hashes --universal --python-version 3.13 --quiet)
           diff -u requirements.lock /tmp/lockcheck/requirements.lock \
             || (echo "::error::requirements.lock is stale; regenerate it with:
-          uv pip compile requirements.in -o requirements.lock --generate-hashes --universal --python-version 3.13" && exit 1)
+          uv pip compile requirements.in -o requirements.lock --upgrade --generate-hashes --universal --python-version 3.13" && exit 1)
 
   scan:
     name: Trivy filesystem scan
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       # Tags carry a leading "v". Versions below v0.35.0 are affected by the
       # brief Trivy ecosystem supply chain compromise; do not pin back.
       - uses: aquasecurity/trivy-action@ed142fd0673e97e23eac54620cfb913e5ce36c25 # v0.36.0
@@ -78,10 +78,10 @@ jobs:
     name: Docker build
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
-      - uses: docker/setup-buildx-action@v3
+      - uses: actions/checkout@v7
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
       - name: Build image
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
         with:
           context: .
           push: false
@@ -95,7 +95,7 @@ jobs:
       # A second, attestation-free pass so the image is actually loadable into
       # the docker daemon. Every layer is a cache hit off the build above.
       - name: Load a runnable copy for the interpreter guard
-        uses: docker/build-push-action@v6
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
         with:
           context: .
           push: false
