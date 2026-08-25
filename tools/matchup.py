@@ -9,11 +9,11 @@ from fastmcp import FastMCP
 
 from clients import normalize
 from clients.fleaflicker import FleaflickerClient
-from tools.common import ok, tool_guard
+from tools.common import READ_ONLY, ok, tool_guard
 
 
 def register_matchup_tools(mcp: FastMCP, client: FleaflickerClient) -> None:
-    @mcp.tool()
+    @mcp.tool(annotations=READ_ONLY)
     @tool_guard
     async def list_matchups(
         week: int | None = None,
@@ -39,7 +39,7 @@ def register_matchup_tools(mcp: FastMCP, client: FleaflickerClient) -> None:
         payload = await client.league_scoreboard(league_id, season, week)
         return ok(normalize.matchups(payload))
 
-    @mcp.tool()
+    @mcp.tool(annotations=READ_ONLY)
     @tool_guard
     async def get_boxscore(fantasy_game_id: int, league_id: int | None = None) -> str:
         """Get one matchup's full boxscore: every slot, both teams, with points.

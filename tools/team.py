@@ -10,7 +10,7 @@ from fastmcp import FastMCP
 from clients import normalize
 from clients.errors import FleaflickerInputError
 from clients.fleaflicker import FleaflickerClient
-from tools.common import ok, tool_guard
+from tools.common import READ_ONLY, ok, tool_guard
 
 # The upstream page size. Fleaflicker ignores a requested limit and always
 # returns 30, so paging is the only way to go deeper.
@@ -22,7 +22,7 @@ MAX_SEARCH_PAGES = 12
 
 
 def register_team_tools(mcp: FastMCP, client: FleaflickerClient) -> None:
-    @mcp.tool()
+    @mcp.tool(annotations=READ_ONLY)
     @tool_guard
     async def get_roster(
         team_id: int,
@@ -54,7 +54,7 @@ def register_team_tools(mcp: FastMCP, client: FleaflickerClient) -> None:
         payload = await client.roster(team_id, league_id, season, week)
         return ok(normalize.roster(payload))
 
-    @mcp.tool()
+    @mcp.tool(annotations=READ_ONLY)
     @tool_guard
     async def search_players(
         name: str | None = None,
