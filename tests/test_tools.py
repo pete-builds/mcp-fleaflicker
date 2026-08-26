@@ -21,7 +21,7 @@ from tests.conftest import load_fixture
 from tools.league import register_league_tools
 from tools.matchup import register_matchup_tools
 from tools.scoring import register_scoring_tools
-from tools.team import register_team_tools
+from tools.team import MAX_SEARCH_PAGES, register_team_tools
 
 EXPECTED_TOOLS = {
     "get_boxscore",
@@ -318,3 +318,38 @@ async def test_search_players_stops_when_the_cursor_does_not_advance(app):
     payload = await call(mcp, "search_players", name="stafford")
     assert payload["data"]["returned"] == 1
     assert fetch.call_count == 1
+
+
+@respx.mock
+async def test_search_players_reports_more_to_read_when_the_page_cap_stops_it(app):
+    """A capped name search must not look like an exhausted pool.
+
+    Name matching is client-side, so a search scans at most MAX_SEARCH_PAGES
+    upstream pages. When that cap ends the scan rather than `limit` doing it,
+    the caller gets fewer results than asked for -- which reads exactly like
+    "there is nothing more". `next_offset` is the only thing that separates the
+    two, so it must survive the cap, and the docstring now tells callers to
+    read it instead of `returned`.
+    """
+    mcp, _ = app
+    page = load_fixture("player_listing")
+    # A pool that always has a next page and never contains the needle, so only
+    # the page cap can end the loop.
+    page["resultOffsetNext"] = 30
+    fetch = route("FetchPlayerListing").mock(
+        side_effect=lambda request: httpx.Response(
+            200,
+            json={
+                **page,
+                "resultOffsetNext": 30 * (fetch.call_count + 1),
+            },
+        )
+    )
+    payload = await call(mcp, "search_players", name="nobodynamedthis", limit=30)
+
+    assert fetch.call_count == MAX_SEARCH_PAGES
+    # Short of `limit`, which on its own would suggest the pool ran out...
+    assert payload["data"]["returned"] == 0
+    # ...but this is what actually says whether it did, and it says no.
+    assert payload["data"]["next_offset"] is not None
+    assert payload["data"]["next_offset"] > 0

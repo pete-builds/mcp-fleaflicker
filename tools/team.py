@@ -76,6 +76,21 @@ def register_team_tools(mcp: FastMCP, client: FleaflickerClient) -> None:
 
         A name that matches nothing returns an empty list, not an error.
 
+        **Read `data.next_offset` before concluding a name is not in the pool.**
+        Name matching happens client-side over fetched pages, and a name search
+        scans at most 12 upstream pages (360 players) per call. So a search can
+        stop with fewer than `limit` results while matches remain further down
+        the pool -- most likely for a common substring, or a position with a
+        deep pool late in a season.
+
+        `data.returned` does NOT distinguish those two cases and must not be
+        used to decide: a short result means only "this call ended", never "the
+        pool is exhausted". `data.next_offset` is the one that separates them.
+        It is null only when the pool really is exhausted, and non-null whenever
+        there is more to read -- whether because you hit `limit` or because the
+        page cap stopped the scan. Call again with `offset=data.next_offset` to
+        continue from where this one stopped.
+
         Idempotent: yes, read-only.
 
         Example: search_players(name="Chase", position="WR")
