@@ -11,7 +11,7 @@ from fastmcp import FastMCP
 from clients.errors import FleaflickerInputError
 from clients.fleaflicker import FleaflickerClient
 from clients.scoring import RuleSet, score_stats
-from tools.common import ok, tool_guard
+from tools.common import READ_ONLY, ok, tool_guard
 
 # Scoring rules change at most once a season, and every score_stat_line call
 # needs them. Cache per league so a batch of scoring calls costs one fetch.
@@ -63,7 +63,7 @@ def _coerce_stats(stats: Any) -> dict[str, Any]:
 def register_scoring_tools(mcp: FastMCP, client: FleaflickerClient) -> None:
     cache = RuleCache(client)
 
-    @mcp.tool()
+    @mcp.tool(annotations=READ_ONLY)
     @tool_guard
     async def score_stat_line(
         stats: dict[str, Any] | str,

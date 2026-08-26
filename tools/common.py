@@ -13,6 +13,31 @@ from clients.errors import FleaflickerError
 
 log = logging.getLogger("mcp-fleaflicker.tools")
 
+# --- Tool annotations ---
+# Eight tools, all reads against a fantasy league, and not one writes anything
+# anywhere. That is worth DECLARING rather than leaving to be inferred: an
+# unannotated read-only server and an unannotated server full of delete tools
+# are indistinguishable in the manifest, so a client trying to be careful has
+# to be careful about everything, which in practice means being careful about
+# nothing.
+#
+# score_stat_line is included deliberately. It reads like a computation rather
+# than a lookup, but it fetches the league's published rules to do the sum, so
+# it is a read of the same league state as the rest and carries the same
+# hints.
+#
+# openWorldHint is True throughout: every tool reaches Fleaflicker, so an
+# answer can change between two identical calls because a game finished, which
+# is a different thing from the call having changed something.
+
+#: Reads only. Safe to repeat, safe to call speculatively.
+READ_ONLY = {
+    "readOnlyHint": True,
+    "destructiveHint": False,
+    "idempotentHint": True,
+    "openWorldHint": True,
+}
+
 
 def ok(data: Any) -> str:
     """Success envelope: ``{"data": ...}``."""

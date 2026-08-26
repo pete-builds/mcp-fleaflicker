@@ -13,11 +13,11 @@ from fastmcp import FastMCP
 from clients import normalize
 from clients.fleaflicker import FleaflickerClient
 from clients.scoring import RuleSet
-from tools.common import ok, tool_guard
+from tools.common import READ_ONLY, ok, tool_guard
 
 
 def register_league_tools(mcp: FastMCP, client: FleaflickerClient) -> None:
-    @mcp.tool()
+    @mcp.tool(annotations=READ_ONLY)
     @tool_guard
     async def get_league_rules(league_id: int | None = None) -> str:
         """Get a league's roster construction and its complete scoring rules.
@@ -49,7 +49,7 @@ def register_league_tools(mcp: FastMCP, client: FleaflickerClient) -> None:
         payload = await client.league_rules(league_id)
         return ok(normalize.league_rules(payload, RuleSet.from_api(payload)))
 
-    @mcp.tool()
+    @mcp.tool(annotations=READ_ONLY)
     @tool_guard
     async def get_standings(
         league_id: int | None = None, season: int | None = None
@@ -76,7 +76,7 @@ def register_league_tools(mcp: FastMCP, client: FleaflickerClient) -> None:
         payload = await client.league_standings(league_id, season)
         return ok(normalize.standings(payload))
 
-    @mcp.tool()
+    @mcp.tool(annotations=READ_ONLY)
     @tool_guard
     async def get_draft_board(
         league_id: int | None = None, season: int | None = None
