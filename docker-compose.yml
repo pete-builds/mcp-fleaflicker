@@ -7,7 +7,7 @@ x-logging: &default-logging
 services:
   mcp-fleaflicker:
     build: .
-    image: mcp-fleaflicker:0.1.0
+    image: mcp-fleaflicker:0.2.0
     container_name: mcp-fleaflicker
     restart: unless-stopped
     ports:

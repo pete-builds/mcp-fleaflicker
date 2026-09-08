@@ -33,7 +33,7 @@ from tools.team import register_team_tools
 load_dotenv()
 
 DEFAULT_PORT = 3727
-VERSION = "0.1.0"
+VERSION = "0.2.0"
 
 
 class FleaflickerSettings(BaseCoreSettings):

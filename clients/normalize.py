@@ -86,6 +86,16 @@ def player(raw: dict[str, Any] | None) -> dict[str, Any]:
     }
 
 
+def _projected(raw: dict[str, Any] | None) -> float:
+    """The league's own projected points per game for a listing entry.
+
+    ``viewingProjectedPoints`` is computed by Fleaflicker under THIS league's
+    scoring rules, so it already reflects superflex, 6-point passing TDs, and
+    every bonus. It sits on the listing entry, not on ``proPlayer``.
+    """
+    return _points((raw or {}).get("viewingProjectedPoints"))
+
+
 def _rank(raw: dict[str, Any] | None) -> dict[str, Any] | None:
     """Overall and positional rank, when the listing carries one."""
     raw = raw or {}
@@ -94,10 +104,18 @@ def _rank(raw: dict[str, Any] | None) -> dict[str, Any] | None:
     positional = positions[0].get("ordinal") if positions else None
     if overall is None and positional is None:
         return None
-    return {
+    out: dict[str, Any] = {
         "overall": _int(overall) or None,
         "positional": _int(positional) or None,
     }
+    if positions:
+        # "QB29" and RATING_VERY_BAD are how the room sees him on the default
+        # board, which is exactly the number a mispricing read turns on.
+        if positions[0].get("formatted"):
+            out["label"] = positions[0]["formatted"]
+        if positions[0].get("rating"):
+            out["rating"] = positions[0]["rating"]
+    return out
 
 
 def league_player(raw: dict[str, Any] | None) -> dict[str, Any]:
@@ -107,6 +125,7 @@ def league_player(raw: dict[str, Any] | None) -> dict[str, Any]:
     out.update(
         {
             "points": _points(raw.get("viewingActualPoints")),
+            "projected_points": _projected(raw),
             "season_total": _points(raw.get("seasonTotal")),
             "season_average": _points(raw.get("seasonAverage")),
         }
@@ -251,40 +270,165 @@ def boxscore(payload: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def draft_board(payload: dict[str, Any]) -> dict[str, Any]:
-    """Every pick, flattened to a round-by-round list.
+def _draft_slot(cell: dict[str, Any]) -> dict[str, int]:
+    """The cell's TRUE position in the draft, as the upstream states it.
 
-    Overall pick number is computed from position rather than read from the
-    payload, which does not carry one.
+    Each cell carries ``slot`` = ``{"round", "slot", "overall"}`` and that
+    ``overall`` is the real selection number, already snake-aware: in a snake,
+    round 2 column 1 is ``overall 28``, not ``overall 15``.
+
+    This used to be recomputed by counting cells left-to-right, which is the
+    grid layout and NOT the pick order. On 2026-09-07 that cost a live draft
+    several minutes of inferring the snake from which cells were empty, because
+    the board rendered every team at its static column while picks were landing
+    in reverse. Read the field; never count.
     """
-    rounds = []
-    overall = 0
+    slot = cell.get("slot") or {}
+    return {
+        "round": _int(slot.get("round")),
+        "pick_in_round": _int(slot.get("slot")),
+        "overall": _int(slot.get("overall")),
+    }
+
+
+def _draft_type(rows: list[dict[str, Any]]) -> str:
+    """SNAKE, LINEAR, or UNKNOWN, decided from the stated pick numbers.
+
+    A snake reverses even rounds, so the ``pick_in_round`` sequence runs
+    backwards relative to grid order. One reversed round is enough to decide.
+    """
+    for raw_round in rows:
+        cells = raw_round.get("cells") or []
+        if len(cells) < 2:
+            continue
+        seq = [_draft_slot(c)["pick_in_round"] for c in cells]
+        if 0 in seq:
+            continue
+        if seq == sorted(seq, reverse=True) and seq != sorted(seq):
+            return "SNAKE"
+    return "LINEAR" if rows else "UNKNOWN"
+
+
+def draft_board(
+    payload: dict[str, Any],
+    *,
+    since_overall: int | None = None,
+    team_id: int | None = None,
+) -> dict[str, Any]:
+    """Every pick as one flat list in TRUE selection order.
+
+    Undrafted cells are omitted rather than returned as ``player: null``. A
+    fifteen-round board is 210 cells, so before the draft starts the old shape
+    spent its entire payload saying "nothing has happened"; ``picks_made: 0``
+    says the same thing in one field. Check ``picks_made``, not the length of
+    ``picks``, to decide whether a season has drafted.
+
+    ``since_overall`` makes this pollable: pass back the previous call's
+    ``next_overall - 1`` and only newer picks come over the wire.
+    """
+    picks: list[dict[str, Any]] = []
+    total = 0
     for raw_round in payload.get("rows") or []:
-        picks = []
-        for index, cell in enumerate(raw_round.get("cells") or [], start=1):
-            overall += 1
+        for cell in raw_round.get("cells") or []:
+            total += 1
+            position = _draft_slot(cell)
             drafted = cell.get("player")
+            if not drafted:
+                continue
             picks.append(
                 {
-                    "overall": overall,
-                    "pick_in_round": index,
+                    **position,
                     "team": (cell.get("team") or {}).get("name", ""),
                     "team_id": _int((cell.get("team") or {}).get("id")),
-                    "player": player((drafted or {}).get("proPlayer")) if drafted else None,
+                    "player": player(drafted.get("proPlayer")),
                 }
             )
-        rounds.append({"round": _int(raw_round.get("round")), "picks": picks})
+
+    picks.sort(key=lambda p: p["overall"])
+    picks_made = len(picks)
+    next_overall = picks[-1]["overall"] + 1 if picks else 1
+
+    # Filter AFTER counting, so picks_made and next_overall always describe the
+    # whole draft. A delta poll that reported its own slice as the draft state
+    # would rewind the caller's cursor on every call.
+    if since_overall is not None:
+        picks = [p for p in picks if p["overall"] > since_overall]
+    if team_id is not None:
+        picks = [p for p in picks if p["team_id"] == team_id]
 
     # draftOrder is a bare list of team stubs, not a {"teams": [...]} envelope.
     raw_order = payload.get("draftOrder") or []
     if isinstance(raw_order, dict):
         raw_order = raw_order.get("teams") or []
+    # Only identity is kept. The full team stub carries a record, points for and
+    # against, and a streak, every one of them zero before week 1, which is 14
+    # teams' worth of zeros on every poll of a live draft.
+    order = [
+        {"slot": index, "id": _int(entry.get("id")), "name": entry.get("name", "")}
+        for index, entry in enumerate(raw_order, start=1)
+    ]
 
-    return {
-        "rounds": rounds,
-        "total_picks": overall,
-        "draft_order": [team(entry) for entry in raw_order],
+    out = {
+        "draft_type": _draft_type(payload.get("rows") or []),
+        "total_picks": total,
+        "picks_made": picks_made,
+        "next_overall": next_overall,
+        "returned": len(picks),
+        "picks": picks,
     }
+    # The seat order is fixed for the whole draft, so a delta poll that resent
+    # it would spend more bytes on the unchanged part than on the new picks.
+    # Omitted only when polling; a first, unfiltered call always carries it.
+    if since_overall is None:
+        out["draft_order"] = order
+    return out
+
+
+def draft_roster_needs(payload: dict[str, Any], team_id: int) -> dict[str, Any]:
+    """What one team still has to draft, from the board's own roster block.
+
+    ``FetchLeagueDraftBoard`` ships a ``rosters`` array carrying each team's
+    live lineup with every slot's ``min``/``max``/``start``. That is the roster
+    cap arithmetic the draft actually turns on, and it was previously being
+    tracked by hand in a markdown table.
+    """
+    for entry in payload.get("rosters") or []:
+        if _int(entry.get("teamId")) != team_id:
+            continue
+        counts: dict[str, int] = {}
+        limits: dict[str, dict[str, int]] = {}
+        filled = 0
+        for slot in entry.get("lineup") or []:
+            position = slot.get("position") or {}
+            label = position.get("label", "")
+            # Only real roster positions carry a min/max cap. Flex slots and
+            # bench slots never match a player's position, so they would report
+            # have: 0 forever and read as an unfilled need. Decide on
+            # eligibility count, not on the label: "D/ST" has a slash and is a real
+            # real position, while "RB/WR/TE" lists three.
+            countable = label and len(position.get("eligibility") or []) == 1
+            if countable and label not in limits:
+                limits[label] = {
+                    "min": _int(position.get("min")),
+                    "max": _int(position.get("max")),
+                    "starts": _int(position.get("start")),
+                }
+            drafted = slot.get("player")
+            if drafted:
+                filled += 1
+                actual = (drafted.get("proPlayer") or {}).get("position", label)
+                counts[actual] = counts.get(actual, 0) + 1
+        needs = {
+            label: {
+                **bounds,
+                "have": counts.get(label, 0),
+                "still_required": max(0, bounds["min"] - counts.get(label, 0)),
+                "room": max(0, bounds["max"] - counts.get(label, 0)),
+            }
+            for label, bounds in limits.items()
+        }
+        return {"team_id": team_id, "rostered": filled, "positions": needs}
+    return {"team_id": team_id, "rostered": 0, "positions": {}}
 
 
 def player_listing(payload: dict[str, Any]) -> dict[str, Any]:

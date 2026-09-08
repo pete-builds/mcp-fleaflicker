@@ -237,12 +237,22 @@ class FleaflickerClient:
         sort: str | None = None,
         free_agents_only: bool = False,
     ) -> dict[str, Any]:
+        # season is accepted and deliberately NOT forwarded. FetchPlayerListing
+        # returns HTTP 400 with an HTML body the moment a season is present,
+        # for ANY value including the current one, while every other endpoint
+        # requires it. Verified live 2026-09-07 against league 14153: without
+        # season, HTTP 200; with season=2026 or season=2025, HTTP 400. The
+        # listing is always current-season, so dropping it loses nothing.
+        _ = season
         params: dict[str, Any] = {
             "league_id": self.resolve_league_id(league_id),
-            "season": season,
             "result_offset": result_offset or None,
             "sort": sort,
         }
+        # NOTE: filter.position.label is accepted upstream (HTTP 200) and then
+        # ignored -- asking for TE returns quarterbacks and defenses. Position
+        # filtering has to happen client-side; this is sent only so a future
+        # upstream fix starts working on its own.
         if position:
             params["filter.position.label"] = position.upper()
         if free_agents_only:
