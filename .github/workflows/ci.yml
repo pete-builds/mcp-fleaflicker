@@ -34,7 +34,10 @@ jobs:
           import asyncio, server
           tools = asyncio.run(server.mcp.list_tools())
           names = sorted(t.name for t in tools)
-          assert len(names) == 8, names
+          # Smoke only: proves every tool registers with no configuration
+          # present. The exact tool set is pinned in tests/test_tools.py and
+          # tests/test_annotations.py; update those, and this count with them.
+          assert len(names) == 9, names
           print('tools:', names)
           "
 
