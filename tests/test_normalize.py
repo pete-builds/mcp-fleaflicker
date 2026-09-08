@@ -198,6 +198,14 @@ def test_team_id_filters_to_one_team():
     assert {p["team_id"] for p in data["picks"]} == {1}
 
 
+def test_a_delta_poll_omits_the_unchanging_seat_order():
+    """Seat order is fixed for the draft; resending it defeats the delta."""
+    full = normalize.draft_board(load_fixture("draft_board"))
+    delta = normalize.draft_board(load_fixture("draft_board"), since_overall=27)
+    assert "draft_order" in full
+    assert "draft_order" not in delta
+
+
 def test_draft_order_drops_the_zeroed_standings_block():
     data = normalize.draft_board(load_fixture("draft_board"))
     entry = data["draft_order"][0]

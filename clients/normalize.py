@@ -368,15 +368,20 @@ def draft_board(
         for index, entry in enumerate(raw_order, start=1)
     ]
 
-    return {
+    out = {
         "draft_type": _draft_type(payload.get("rows") or []),
         "total_picks": total,
         "picks_made": picks_made,
         "next_overall": next_overall,
         "returned": len(picks),
         "picks": picks,
-        "draft_order": order,
     }
+    # The seat order is fixed for the whole draft, so a delta poll that resent
+    # it would spend more bytes on the unchanged part than on the new picks.
+    # Omitted only when polling; a first, unfiltered call always carries it.
+    if since_overall is None:
+        out["draft_order"] = order
+    return out
 
 
 def draft_roster_needs(payload: dict[str, Any], team_id: int) -> dict[str, Any]:

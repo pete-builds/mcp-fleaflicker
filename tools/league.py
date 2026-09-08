@@ -95,8 +95,10 @@ def register_league_tools(mcp: FastMCP, client: FleaflickerClient) -> None:
         Returns JSON with `data.draft_type` (`SNAKE`, `LINEAR` or `UNKNOWN`),
         `data.total_picks` (every seat on the board), `data.picks_made`,
         `data.next_overall` (the pick number that lands next), `data.returned`
-        (how many picks this call carried), `data.picks[]` and
-        `data.draft_order[]` (`slot`, `id`, `name`).
+        (how many picks this call carried), and `data.picks[]`.
+        `data.draft_order[]` (`slot`, `id`, `name`) is present only on a call
+        with no `since_overall`, because the seat order cannot change mid-draft
+        and resending it would be most of a delta poll's payload.
 
         Each pick carries `overall`, `round`, `pick_in_round`, `team`,
         `team_id`, and `player` (`id`, `name`, `position`, `pro_team`,
