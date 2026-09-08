@@ -22,6 +22,7 @@ from tools.team import register_team_tools
 EXPECTED = {
     "get_league_rules", "get_standings", "get_draft_board", "get_roster",
     "search_players", "list_matchups", "get_boxscore", "score_stat_line",
+    "get_available_players",
 }
 
 
@@ -43,7 +44,7 @@ async def tools():
     await client.close()
 
 
-async def test_the_expected_eight_are_present(tools):
+async def test_the_expected_nine_are_present(tools):
     """Guards the guard: an empty manifest would pass everything below."""
     assert set(tools) == EXPECTED
 

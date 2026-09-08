@@ -54,8 +54,9 @@ than one scoring group refuses to resolve and names the alternatives instead:
 | `get_roster` | One team's lineup by slot, for any week or season |
 | `list_matchups` | A week's head-to-head games and scores |
 | `get_boxscore` | Full matchup detail, both lineups, with Fleaflicker's own computed points |
-| `get_draft_board` | Every pick, round by round, with overall pick numbers |
-| `search_players` | The player pool by name or position, with ranks and ownership |
+| `get_draft_board` | Every pick in true selection order, snake-aware, with `since_overall` delta polling for a live draft |
+| `search_players` | The player pool by name or position, with ranks, projections and ownership |
+| `get_available_players` | The best undrafted players left, ranked by the league's own projection |
 | `score_stat_line` | Score a stat line under the league's real rules, with a per-rule breakdown |
 
 All tools are read-only and idempotent. Every tool returns a JSON string in one of two
@@ -103,6 +104,28 @@ It is in the league URL: `fleaflicker.com/nfl/leagues/14153` is league `14153`.
 Setting `FLEAFLICKER_LEAGUE_ID` makes every tool's `league_id` argument optional. Leaving
 it unset is also valid: callers then pass `league_id` per call, which is how one
 deployment serves several leagues.
+
+## Live-draft notes
+
+Three upstream behaviours matter during a draft, each verified against the live
+API rather than assumed.
+
+**The board states the true pick number; do not count cells.** Every cell of
+`FetchLeagueDraftBoard` carries `slot` = `{round, slot, overall}`, and that
+`overall` is already snake-aware. The grid renders each team in a fixed column,
+so in a snake the even rounds fill right to left and a left-to-right counter
+assigns the wrong number to every pick in them. `get_draft_board` reads the
+field and reports `draft_type` outright.
+
+**`FetchPlayerListing` rejects a `season` parameter.** Any value, including the
+current season, returns HTTP 400 with an HTML body while every other endpoint
+requires one. `search_players` and `get_available_players` still accept
+`season` and deliberately never forward it.
+
+**`filter.position.label` is accepted and ignored.** Asking the listing for
+tight ends returns quarterbacks and defenses at HTTP 200. Position filtering
+happens client-side.
+
 
 ## Configuration
 
@@ -175,10 +198,16 @@ against the platform rather than against its own arithmetic.
 
 ## What this does not do
 
-It reads and scores; it does not project. There is no ranking model, no waiver
-recommendation, and no start/sit advice. Feeding projected stat lines into
-`score_stat_line` gives you projected points under the real rules, but the projections
-have to come from somewhere else.
+It builds no model of its own. There is no ranking engine, no waiver
+recommendation, and no start/sit advice.
+
+It does now surface a projection, but that projection is Fleaflicker's, not this
+server's: `projected_points` is the platform's own `viewingProjectedPoints`, already
+computed under the league's real scoring rules, and it is passed through unchanged.
+Read it next to `rank_draft`, which is the default board the rest of the league drafts
+from, and the gap between the two is the whole mispricing signal. For a projection this
+server computes, feed your own projected stat line into `score_stat_line`; those stat
+lines still have to come from somewhere else.
 
 It is also unofficial and not affiliated with Fleaflicker. The API it uses is public but
 undocumented, so a shape change upstream can break a normaliser; the tests are built to

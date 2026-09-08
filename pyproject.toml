@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mcp-fleaflicker"
-version = "0.1.0"
+version = "0.2.0"
 description = "MCP server for Fleaflicker fantasy leagues. Reads rosters, matchups, and drafts, and scores stat lines using the league's own published rules rather than a hardcoded scoring system."
 readme = "README.md"
 license = { file = "LICENSE" }

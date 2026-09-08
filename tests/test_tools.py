@@ -30,6 +30,7 @@ EXPECTED_TOOLS = {
     "get_roster",
     "get_standings",
     "list_matchups",
+    "get_available_players",
     "score_stat_line",
     "search_players",
 }
@@ -56,6 +57,17 @@ async def call(mcp: FastMCP, tool: str, /, **kwargs) -> dict:
     result = await mcp.call_tool(tool, kwargs or {})
     blocks = result.content if hasattr(result, "content") else result
     return json.loads(blocks[0].text)
+
+
+async def raw(mcp: FastMCP, tool: str, /, **kwargs) -> str:
+    """The tool's response as the wire string, before JSON parsing.
+
+    Needed by the payload-size and whitespace tests, which are assertions about
+    the serialisation itself rather than about the decoded value.
+    """
+    result = await mcp.call_tool(tool, kwargs or {})
+    blocks = result.content if hasattr(result, "content") else result
+    return blocks[0].text
 
 
 def route(method: str):
@@ -165,7 +177,135 @@ async def test_get_draft_board_returns_data_envelope(app):
         return_value=httpx.Response(200, json=load_fixture("draft_board"))
     )
     payload = await call(mcp, "get_draft_board", season=2025)
-    assert payload["data"]["rounds"][0]["picks"][0]["overall"] == 1
+    assert payload["data"]["picks"][0]["overall"] == 1
+    assert payload["data"]["draft_type"] == "SNAKE"
+
+
+@respx.mock
+async def test_get_draft_board_delta_carries_only_new_picks(app):
+    """The live-draft path: poll with a cursor, get back only what landed."""
+    mcp, _ = app
+    route("FetchLeagueDraftBoard").mock(
+        return_value=httpx.Response(200, json=load_fixture("draft_board"))
+    )
+    payload = await call(mcp, "get_draft_board", since_overall=27)
+    data = payload["data"]
+    assert [p["overall"] for p in data["picks"]] == [28, 29]
+    # The cursor still describes the whole draft, not the slice.
+    assert data["picks_made"] == 29
+    assert data["next_overall"] == 30
+
+
+@respx.mock
+async def test_get_draft_board_delta_is_far_smaller_than_the_full_board(app):
+    """The reason this change exists, pinned as a number.
+
+    A poll that costs as much as a full fetch is not a delta.
+    """
+    mcp, _ = app
+    route("FetchLeagueDraftBoard").mock(
+        return_value=httpx.Response(200, json=load_fixture("draft_board"))
+    )
+    full = await raw(mcp, "get_draft_board")
+    delta = await raw(mcp, "get_draft_board", since_overall=27)
+    assert len(delta) < len(full) / 4
+
+
+@respx.mock
+async def test_get_draft_board_is_serialised_compactly(app):
+    """Indentation was ~40% of a 73 KB live board. It is not coming back."""
+    mcp, _ = app
+    route("FetchLeagueDraftBoard").mock(
+        return_value=httpx.Response(200, json=load_fixture("draft_board"))
+    )
+    body = await raw(mcp, "get_draft_board")
+    assert '\n' not in body
+    assert ', ' not in body
+    json.loads(body)  # still valid JSON, only the whitespace is gone
+
+
+@respx.mock
+async def test_get_draft_board_reports_roster_needs(app):
+    mcp, _ = app
+    route("FetchLeagueDraftBoard").mock(
+        return_value=httpx.Response(200, json=load_fixture("draft_board"))
+    )
+    payload = await call(mcp, "get_draft_board", needs_for_team=1)
+    needs = payload["data"]["needs"]["positions"]
+    assert needs["RB"]["still_required"] == 2
+    assert needs["QB"]["room"] == 1
+
+
+# --- get_available_players -----------------------------------------------
+
+
+@respx.mock
+async def test_get_available_players_returns_data_envelope(app):
+    mcp, _ = app
+    route("FetchPlayerListing").mock(
+        return_value=httpx.Response(200, json=load_fixture("player_listing"))
+    )
+    payload = await call(mcp, "get_available_players")
+    data = payload["data"]
+    assert data["players"]
+    assert data["returned"] == len(data["players"])
+    assert "pool_size" in data and "scanned" in data
+    first = data["players"][0]
+    assert {"id", "name", "position", "projected_points"} <= set(first)
+    # The rank key must match search_players; a private spelling here means
+    # the field silently never appears.
+    assert "rank_draft" in first
+
+
+@respx.mock
+async def test_get_available_players_is_sorted_by_projection(app):
+    mcp, _ = app
+    route("FetchPlayerListing").mock(
+        return_value=httpx.Response(200, json=load_fixture("player_listing"))
+    )
+    payload = await call(mcp, "get_available_players")
+    projections = [p["projected_points"] for p in payload["data"]["players"]]
+    assert projections == sorted(projections, reverse=True)
+
+
+@respx.mock
+async def test_get_available_players_filters_position_client_side(app):
+    """Upstream accepts filter.position.label and ignores it, so we must not.
+
+    The fixture is a mixed-position page; asking for one position has to come
+    back single-position anyway.
+    """
+    mcp, _ = app
+    route("FetchPlayerListing").mock(
+        return_value=httpx.Response(200, json=load_fixture("player_listing"))
+    )
+    payload = await call(mcp, "get_available_players", position="QB")
+    positions = {p["position"] for p in payload["data"]["players"]}
+    assert positions <= {"QB"}
+
+
+@respx.mock
+async def test_get_available_players_rejects_a_bad_limit(app):
+    mcp, _ = app
+    payload = await call(mcp, "get_available_players", limit=9999)
+    assert payload["code"] == "INVALID_INPUT"
+
+
+@respx.mock
+async def test_player_listing_never_forwards_season(app):
+    """FetchPlayerListing 400s on any season value, so it must never be sent.
+
+    Verified live 2026-09-07: with season, HTTP 400 and an HTML body; without
+    it, HTTP 200. The tools still accept the argument, and must swallow it.
+    """
+    mcp, _ = app
+    listing = route("FetchPlayerListing").mock(
+        return_value=httpx.Response(200, json=load_fixture("player_listing"))
+    )
+    await call(mcp, "search_players", season=2026)
+    assert listing.called
+    for request in listing.calls:
+        assert "season" not in request.request.url.params
 
 
 # --- failure envelope ----------------------------------------------------

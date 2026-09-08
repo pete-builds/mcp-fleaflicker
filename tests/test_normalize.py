@@ -129,24 +129,122 @@ def test_roster_tolerates_empty_slots():
 # --- draft board ---------------------------------------------------------
 
 
-def test_draft_board_computes_overall_pick_numbers():
+def test_draft_board_reads_the_true_overall_from_the_upstream():
+    """The upstream states the real pick number; never recount it.
+
+    This fixture is a snake. Round 2 column 1 belongs to Team 01 and is
+    genuinely pick 28, because a snake reverses. Counting cells left to right
+    calls it pick 15, and that wrong number is what a live draft acts on.
+    """
     data = normalize.draft_board(load_fixture("draft_board"))
-    assert data["rounds"]
-    first = data["rounds"][0]["picks"]
-    assert first[0]["overall"] == 1
-    assert first[0]["pick_in_round"] == 1
-    assert first[0]["player"]["name"]
-    # Overall numbering continues across the round boundary.
-    if len(data["rounds"]) > 1:
-        second = data["rounds"][1]["picks"]
-        assert second[0]["overall"] == len(first) + 1
+    assert data["draft_type"] == "SNAKE"
+
+    by_overall = {p["overall"]: p for p in data["picks"]}
+    assert by_overall[1]["team"] == "Team 01"
+    assert by_overall[1]["pick_in_round"] == 1
+
+    # The control: a positional counter would put Team 01 at 15 here.
+    assert by_overall[28]["team"] == "Team 01"
+    assert by_overall[28]["round"] == 2
+    assert by_overall[28]["pick_in_round"] == 14
+    assert 15 not in by_overall or by_overall[15]["team"] == "Team 14"
 
 
-def test_draft_board_handles_an_undrafted_slot():
-    payload = {"rows": [{"round": 1, "cells": [{"team": {"id": 1, "name": "A"}}]}]}
+def test_draft_board_is_sorted_by_true_selection_order():
+    data = normalize.draft_board(load_fixture("draft_board"))
+    overalls = [p["overall"] for p in data["picks"]]
+    assert overalls == sorted(overalls)
+
+
+def test_draft_board_omits_undrafted_seats_but_still_counts_them():
+    data = normalize.draft_board(load_fixture("draft_board"))
+    # The fixture's last seat (round 3, overall 30) has no player.
+    assert data["total_picks"] == 30
+    assert data["picks_made"] == 29
+    assert all(p["player"] is not None for p in data["picks"])
+    assert data["next_overall"] == 30
+
+
+def test_an_undrafted_season_reports_zero_rather_than_a_wall_of_nulls():
+    payload = {"rows": [{"round": 1, "cells": [
+        {"team": {"id": 1, "name": "A"}, "slot": {"round": 1, "slot": 1, "overall": 1}},
+        {"team": {"id": 2, "name": "B"}, "slot": {"round": 1, "slot": 2, "overall": 2}},
+    ]}]}
     data = normalize.draft_board(payload)
-    assert data["rounds"][0]["picks"][0]["player"] is None
-    assert data["total_picks"] == 1
+    assert data["picks"] == []
+    assert data["picks_made"] == 0
+    assert data["total_picks"] == 2
+    assert data["next_overall"] == 1
+
+
+def test_since_overall_returns_only_newer_picks():
+    data = normalize.draft_board(load_fixture("draft_board"), since_overall=27)
+    assert [p["overall"] for p in data["picks"]] == [28, 29]
+    assert data["returned"] == 2
+
+
+def test_the_polling_cursor_describes_the_draft_not_the_slice():
+    """A delta poll that reported its own slice would rewind the caller."""
+    full = normalize.draft_board(load_fixture("draft_board"))
+    delta = normalize.draft_board(load_fixture("draft_board"), since_overall=27)
+    assert delta["picks_made"] == full["picks_made"]
+    assert delta["next_overall"] == full["next_overall"]
+    assert delta["total_picks"] == full["total_picks"]
+
+
+def test_team_id_filters_to_one_team():
+    data = normalize.draft_board(load_fixture("draft_board"), team_id=1)
+    assert data["picks"]
+    assert {p["team_id"] for p in data["picks"]} == {1}
+
+
+def test_draft_order_drops_the_zeroed_standings_block():
+    data = normalize.draft_board(load_fixture("draft_board"))
+    entry = data["draft_order"][0]
+    assert set(entry) == {"slot", "id", "name"}
+    assert entry["slot"] == 1
+
+
+def test_a_linear_board_is_not_called_a_snake():
+    payload = {"rows": [
+        {"round": 1, "cells": [
+            {"team": {"id": 1, "name": "A"}, "slot": {"round": 1, "slot": 1, "overall": 1}},
+            {"team": {"id": 2, "name": "B"}, "slot": {"round": 1, "slot": 2, "overall": 2}}]},
+        {"round": 2, "cells": [
+            {"team": {"id": 1, "name": "A"}, "slot": {"round": 2, "slot": 1, "overall": 3}},
+            {"team": {"id": 2, "name": "B"}, "slot": {"round": 2, "slot": 2, "overall": 4}}]},
+    ]}
+    assert normalize.draft_board(payload)["draft_type"] == "LINEAR"
+
+
+def test_roster_needs_come_from_the_boards_own_roster_block():
+    needs = normalize.draft_roster_needs(load_fixture("draft_board"), 1)
+    assert needs["team_id"] == 1
+    assert needs["rostered"] == 3
+    rb = needs["positions"]["RB"]
+    assert rb == {"min": 3, "max": 5, "starts": 1, "have": 1,
+                  "still_required": 2, "room": 4}
+    # QB is at its cap: one rostered, room for one more, none required.
+    assert needs["positions"]["QB"]["still_required"] == 0
+    assert needs["positions"]["WR"]["still_required"] == 4
+
+
+def test_roster_needs_keeps_dst_and_drops_flex_slots():
+    """"D/ST" has a slash and is real; "RB/WR/TE" has three eligibilities.
+
+    Filtering on the label rather than the eligibility count silently deletes
+    the D/ST requirement, which is the one position a draft can forget.
+    """
+    payload = {"rows": [], "rosters": [{"teamId": 7, "lineup": [
+        {"position": {"label": "D/ST", "eligibility": ["D/ST"],
+                      "min": 1, "max": 2, "start": 1}},
+        {"position": {"label": "RB/WR/TE", "eligibility": ["RB", "WR", "TE"],
+                      "min": 0, "max": 0, "start": 1}},
+        {"position": {"label": "BN", "eligibility": [], "min": 0, "max": 7}},
+    ]}]}
+    positions = normalize.draft_roster_needs(payload, 7)["positions"]
+    assert set(positions) == {"D/ST"}
+    assert positions["D/ST"]["still_required"] == 1
 
 
 # --- player listing ------------------------------------------------------

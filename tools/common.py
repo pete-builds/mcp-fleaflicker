@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import functools
+import json
 import logging
 from collections.abc import Awaitable, Callable
 from typing import Any
@@ -42,6 +43,19 @@ READ_ONLY = {
 def ok(data: Any) -> str:
     """Success envelope: ``{"data": ...}``."""
     return format_response({"data": data})
+
+
+def ok_compact(data: Any) -> str:
+    """Success envelope with the whitespace removed.
+
+    Identical JSON structure to ``ok``; only the indentation differs. The
+    shared ``format_response`` pretty-prints with ``indent=2``, which is right
+    for a ten-field answer and wrong for a draft board: on a 210-pick board the
+    indentation alone was roughly 40% of a 73 KB payload, re-sent every poll.
+    Use this for any tool whose result is a long list; keep ``ok`` elsewhere so
+    hand-read responses stay readable.
+    """
+    return json.dumps({"data": data}, separators=(",", ":"), default=str)
 
 
 def fail(message: str, code: str, details: dict | None = None) -> str:
