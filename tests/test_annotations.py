@@ -59,7 +59,7 @@ async def test_every_tool_is_read_only(tools):
     The failure is a prompt to classify the new tool deliberately, not an
     obstacle to adding one.
     """
-    assert sorted(n for n, t in tools.items() if not t.annotations.readOnlyHint) == []
+    assert sorted(n for n, t in tools.items() if not t.annotations.read_only_hint) == []
 
 
 async def test_score_stat_line_is_read_only_too(tools):
@@ -68,14 +68,14 @@ async def test_score_stat_line_is_read_only_too(tools):
     So it is a read of the same league state as the rest, and pinning it here
     stops someone reclassifying it on the strength of its name.
     """
-    assert tools["score_stat_line"].annotations.readOnlyHint is True
+    assert tools["score_stat_line"].annotations.read_only_hint is True
 
 
 async def test_nothing_claims_to_be_destructive(tools):
-    assert sorted(n for n, t in tools.items() if t.annotations.destructiveHint) == []
+    assert sorted(n for n, t in tools.items() if t.annotations.destructive_hint) == []
 
 
 async def test_open_world_and_idempotent_together(tools):
     """An answer can change because a game finished, not because the call did."""
-    assert sorted(n for n, t in tools.items() if not t.annotations.openWorldHint) == []
-    assert sorted(n for n, t in tools.items() if not t.annotations.idempotentHint) == []
+    assert sorted(n for n, t in tools.items() if not t.annotations.open_world_hint) == []
+    assert sorted(n for n, t in tools.items() if not t.annotations.idempotent_hint) == []
