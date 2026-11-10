@@ -24,6 +24,13 @@ away from every other test.
 The positive controls build the server the loopback way and prove the same
 probe reports 421 there, so a 200 here is evidence rather than a probe that
 cannot fail.
+
+Every boot sets a bearer token and the probe presents it. HTTP refuses to
+start without one (see ``test_auth_required.py``), and once it has one a
+request that clears the Host guard without the header is answered 401, never
+the 200 these tests assert. The guard runs before auth (measured: a loopback
+build answers 421 with or without the header), so the 421 controls are
+unaffected by the token.
 """
 
 from __future__ import annotations
@@ -41,6 +48,8 @@ LAN_IP = "192.168.86.20"
 # (`ports: ["<port>:<port>"]`); host networking is the "direct" path.
 BRIDGE_IP = "172.17.0.2"
 PORT = 3727
+# Obviously fake. HTTP will not start without a token; this is not a secret.
+TOKEN = "test-token-not-a-secret"
 REPO = Path(__file__).resolve().parent.parent
 
 _PROBE = r"""
@@ -59,7 +68,7 @@ import server
 server.main()
 
 app = captured["app"]
-lan_ip, bridge_ip, port = sys.argv[1], sys.argv[2], int(sys.argv[3])
+lan_ip, bridge_ip, port, token = sys.argv[1], sys.argv[2], int(sys.argv[3]), sys.argv[4]
 init = {
     "jsonrpc": "2.0",
     "id": 1,
@@ -73,6 +82,7 @@ init = {
 headers = {
     "accept": "application/json, text/event-stream",
     "content-type": "application/json",
+    "authorization": f"Bearer {token}",
 }
 
 
@@ -120,6 +130,7 @@ def _boot(**env_overrides: str) -> dict:
     env.update(
         {
             "MCP_PORT": str(PORT),
+            "MCP_AUTH_TOKEN": TOKEN,
             "FASTMCP_SHOW_SERVER_BANNER": "false",
             "FASTMCP_CHECK_FOR_UPDATES": "off",
             "PYTHONPATH": str(REPO),
@@ -127,7 +138,7 @@ def _boot(**env_overrides: str) -> dict:
     )
     env.update(env_overrides)
     proc = subprocess.run(
-        [sys.executable, "-c", _PROBE, LAN_IP, BRIDGE_IP, str(PORT)],
+        [sys.executable, "-c", _PROBE, LAN_IP, BRIDGE_IP, str(PORT), TOKEN],
         cwd=REPO,
         env=env,
         capture_output=True,

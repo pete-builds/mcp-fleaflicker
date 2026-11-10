@@ -5,7 +5,10 @@ rosters, standings, matchups, boxscores, and draft boards, and it scores stat li
 **the league's own published scoring rules** rather than a hardcoded scoring system.
 
 Fleaflicker's read API is public and unauthenticated, so this server needs no API key,
-stores no credentials, and exposes no write surface. It cannot change your league.
+holds no upstream credential, and exposes no write surface. It cannot change your league.
+
+The server's own HTTP endpoint is a different matter: it requires a bearer token and
+refuses to start without one. See [Authentication](#authentication).
 
 ## Why the scoring engine is the interesting part
 
@@ -79,23 +82,73 @@ Codes: `UPSTREAM_DOWN`, `AUTH_FAILED`, `INVALID_INPUT`, `NOT_FOUND`, `RATE_LIMIT
 git clone https://github.com/pete-builds/mcp-fleaflicker.git
 cd mcp-fleaflicker
 cp .env.example .env          # set FLEAFLICKER_LEAGUE_ID, or leave it blank
+chmod 600 .env
+python3 -c "import secrets; print(secrets.token_urlsafe(32))"
+# paste that value into .env as MCP_AUTH_TOKEN=<token>
 docker compose up -d --build
 curl -s localhost:3727/healthz
 ```
 
-Then register it with your MCP client:
+The token step is not optional. Without `MCP_AUTH_TOKEN` in `.env` the container exits
+at once with `Refusing to start streamable-http with no auth provider`.
+
+Then register it with your MCP client, sending the same token:
 
 ```bash
-claude mcp add fleaflicker --transport http --scope user \
-  --url http://localhost:3727/mcp
+claude mcp add --transport http --scope user fleaflicker http://localhost:3727/mcp \
+  --header "Authorization: Bearer <token>"
 ```
 
 Running from source instead:
 
 ```bash
 python -m venv .venv && .venv/bin/pip install -r requirements-dev.in
-.venv/bin/python server.py
+MCP_AUTH_TOKEN=<token> .venv/bin/python server.py     # HTTP on :3727
+MCP_TRANSPORT=stdio .venv/bin/python server.py        # stdio, no token needed
 ```
+
+## Authentication
+
+Over HTTP, which is the default transport and what `docker compose` runs, a bearer
+token is required. There is no setting that turns this off.
+
+- **No token, no server.** If `MCP_AUTH_TOKEN` is unset, empty, or blank, the process
+  exits non-zero before it opens a port. `MCP_AUTH_REQUIRED=false` does not change
+  that; it used to mean "run open" and is now ignored for HTTP.
+- **Every request to `/mcp` must carry it.** A missing or wrong
+  `Authorization: Bearer <token>` header is answered `401`.
+- **`/healthz` needs no token.** It sits outside the auth layer so the container
+  healthcheck and an uptime monitor can read it. It reports liveness and configuration
+  only, and never the token.
+- **stdio needs no token.** It is a local pipe with no network listener. Set
+  `MCP_TRANSPORT=stdio` and nothing else.
+
+Generate a token:
+
+```bash
+python3 -c "import secrets; print(secrets.token_urlsafe(32))"
+```
+
+Put it in `.env` on the host as `MCP_AUTH_TOKEN=<token>` and make the file readable by
+you alone (`chmod 600 .env`). Keep it out of `docker-compose.yml` and out of git; `.env`
+is already gitignored and excluded from the image.
+
+A client entry, for clients configured by JSON (`.mcp.json` and similar):
+
+```json
+{
+  "mcpServers": {
+    "fleaflicker": {
+      "type": "http",
+      "url": "http://localhost:3727/mcp",
+      "headers": { "Authorization": "Bearer <token>" }
+    }
+  }
+}
+```
+
+From another machine, replace `localhost` with the host's address. To rotate the token,
+change it in `.env`, run `docker compose up -d`, and update each client.
 
 ## Finding your league id
 
@@ -137,8 +190,8 @@ happens client-side.
 | `FLEAFLICKER_TIMEOUT` | `30` | Per-request timeout, seconds |
 | `MCP_PORT` | `3727` | Listen port |
 | `LOG_LEVEL` / `LOG_FORMAT` | `INFO` / `text` | `text` or `json` |
-| `MCP_AUTH_REQUIRED` | `false` | Require a bearer token on `/mcp` |
-| `MCP_AUTH_TOKEN` | *(unset)* | The bearer token, when auth is required |
+| `MCP_AUTH_TOKEN` | *(unset)* | **Required for HTTP.** The bearer token every client sends to `/mcp`. The server will not start over HTTP without it |
+| `MCP_TRANSPORT` | `streamable-http` | `streamable-http` or `stdio`. stdio needs no token |
 
 ## Scoring examples
 

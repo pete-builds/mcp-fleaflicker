@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "mcp-fleaflicker"
-version = "0.2.0"
+version = "0.3.0"
 description = "MCP server for Fleaflicker fantasy leagues. Reads rosters, matchups, and drafts, and scores stat lines using the league's own published rules rather than a hardcoded scoring system."
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -30,7 +30,7 @@ dependencies = [
     "pydantic>=2.13.4",
     "pydantic-settings>=2.14.2",
     # Pinned to an immutable commit tarball until pete-mcp-core is on PyPI.
-    "pete-mcp-core @ https://github.com/pete-builds/pete-mcp-core/archive/15d210625cfcf1840b6b6e95cf10990214585104.tar.gz",
+    "pete-mcp-core @ https://github.com/pete-builds/pete-mcp-core/archive/18f22618723b38493fb20039083c68f014cafb2e.tar.gz",
 ]
 
 [project.optional-dependencies]

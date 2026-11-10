@@ -11,9 +11,14 @@ HTTP verb is not a workaround: the session is created before method dispatch,
 so HEAD and OPTIONS leak slightly worse than GET. Only staying off the ``/mcp``
 mount avoids it. ``/healthz`` is a plain custom route with no session cost.
 
-401 is treated as alive because with ``MCP_AUTH_REQUIRED=true`` an
-unauthenticated probe is rejected by a server that is otherwise serving
-perfectly. 500 stays out: a real fault must still fail.
+The probe never carries a token. HTTP now always runs with bearer auth, and
+``/healthz`` still answers 200 because custom routes mount outside the auth
+middleware (pinned by ``tests/test_auth_required.py``). 401 is treated as
+alive regardless, so that if a later FastMCP moves custom routes behind auth
+the container is not marked unhealthy for being correctly locked. The rest of
+the set is pete-mcp-core's ``DEFAULT_HEALTHY_CODES``, which since ``18f2261``
+is 200, 204, 400, 401, 404, 405, 406 and 503: "the process answered". 500
+stays out: a real fault must still fail.
 
 Env precedence for the port matches ``pete_mcp_core.serve`` exactly
 (``FASTMCP_PORT`` > ``MCP_PORT`` > default) so the probe can never target a
