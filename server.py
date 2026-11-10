@@ -34,7 +34,7 @@ from tools.team import register_team_tools
 load_dotenv()
 
 DEFAULT_PORT = 3727
-VERSION = "0.2.0"
+VERSION = "0.3.0"
 
 
 class FleaflickerSettings(BaseCoreSettings):
@@ -105,7 +105,10 @@ mcp = FastMCP(
     auth=build_auth_provider(
         settings.auth_token,
         client_id="fleaflicker",
-        required=settings.auth_required,
+        # stdio is a local pipe with no network surface, so it needs no token.
+        # Any HTTP start with no provider is refused by run_server below, so
+        # scoping this to the transport cannot open the network listener.
+        required=settings.auth_required and settings.transport == "streamable-http",
         logger=log,
     ),
 )

@@ -7,11 +7,16 @@ x-logging: &default-logging
 services:
   mcp-fleaflicker:
     build: .
-    image: mcp-fleaflicker:0.2.0
+    image: mcp-fleaflicker:0.3.0
     container_name: mcp-fleaflicker
     restart: unless-stopped
     ports:
       - "3727:3727"
+    # .env must hold MCP_AUTH_TOKEN. The server refuses to start over HTTP
+    # without a bearer token, and with restart: unless-stopped that shows up
+    # as a restart loop, so set it before `docker compose up`. The token
+    # lives in .env on the host (chmod 600), never in this file and never in
+    # git. See .env.example for how to generate one.
     env_file: .env
     logging: *default-logging
     # The server writes nothing to disk: no database, no credential store, no
